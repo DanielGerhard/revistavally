@@ -1,0 +1,13 @@
+:root {
+    // Paleta
+    --cor-fonte: #260000;
+    --cor-primaria: #03211B;
+    --cor-secundaria:#A82757;
+    --cor-destaque: #F2AB32;
+    --cor-auxiliar: #E1E1E1;
+}
+
+::selection {
+    color: var(--cor-fonte);
+    background: var(--cor-auxiliar);
+}

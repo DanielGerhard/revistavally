@@ -1,0 +1,37 @@
+// vars 
+
+
+:root {
+    --altura-header: 112px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 5;
+    nav {
+        >.navbar {
+            justify-content: end;
+            height: var(--altura-header);
+            padding: 0;
+            margin-right: -15px;
+
+            >li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: var(--altura-header);
+
+                >a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    font-size: var(--fonte-pequena);
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+}
