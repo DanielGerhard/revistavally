@@ -1,9 +1,8 @@
 :root {
     // Fontes
-    --fonte-primaria: 'Yeseva One',
-        cursive;
-    --fonte-secundaria: 'Share Tech Mono',
-        monospace;
+    --fonte-primaria: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Arca Majora 3', sans-serif;
+    --fonte-destaque: 'Lobster Two', cursive;
 
     //Tamanhos
     --fonte-10px: 0.625rem;
@@ -33,8 +32,10 @@
     --fonte-50px: 3.125rem;
     --fonte-144px: 9rem;
 
-    --fonte-extra-pequena: var(--fonte-16px);
-    --fonte-pequena: var(--fonte-20px);
+    --default-font: 1rem; // 16px
+
+    --fonte-extra-pequena: var(--fonte-12px);
+    --fonte-pequena: var(--fonte-14px);
     --fonte-normal: var(--fonte-24px);
     --fonte-media: var(--fonte-28px);
     --fonte-media-grande: var(--fonte-32px);

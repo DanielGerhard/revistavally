@@ -1,5 +1,4 @@
-main{
-}
+main {}
 
 :target {
     padding-top: var(--altura-header);
@@ -51,3 +50,12 @@ main{
         top: 0;
     }
 }
+
+// .focus-border {
+//     &:focus {
+//         border: 3px solid rgba(0, 0, 0, 1);
+//         border-radius: 8px;
+//         padding: 4px;
+//         margin: -4px;
+//     }
+// }

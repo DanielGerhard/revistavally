@@ -1,13 +1,29 @@
 :root {
     // Paleta
-    --cor-fonte: #260000;
-    --cor-primaria: #03211B;
-    --cor-secundaria:#A82757;
-    --cor-destaque: #F2AB32;
-    --cor-auxiliar: #E1E1E1;
+    --cor-fonte: #000;
+    --cor-auxiliar: #F6F6F6;
+    --cor-auxiliar-escura: #dfdfdf;
+
+    // Cores da Bandeira
+    --vermelho: #DF694D;
+    --laranja: #DE7C4C;
+    --amarelo: #DCB14B;
+    --verde: #32BEA1;
+    --azul: #2A96BD;
+    --roxo: #8F4FD9;
+
+    //Redes
+    --cor-whatsapp: #25D366;
+    --cor-mail: #6FC5EB;
+    --cor-instagram: #E1306C;
 }
 
 ::selection {
     color: var(--cor-fonte);
     background: var(--cor-auxiliar);
+}
+
+.gradiente-colorido {
+    background: #fff;
+    background: linear-gradient(90deg, var(--vermelho) 0%, var(--laranja) 20%, var(--amarelo) 40%, var(--verde) 60%, rgba(4, 120, 194, 1) 80%, var(--roxo) 100%);
 }
