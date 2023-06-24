@@ -20,16 +20,17 @@
 
     <?php /* <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css'; ?>"> */ ?>
 
-    <style>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css'; ?>">
+    <?php /* <style>
         <?php include get_template_directory() . '/style.css'; ?>
-    </style>
+    </style> */ ?>
 </head>
 
 <body>
     <input type="hidden" id="theme_url" value="<?php echo get_template_directory_uri(); ?>">
     <input type="hidden" id="ajax_url" value="<?php echo admin_url('admin-ajax.php'); ?>">
-    <div class="no-overflow">
-        <header e-header>
+    <div class="document-wrap">
+        <header class="header" e-header>
             <div class="container-fluid">
                 <div class="header-wrapper">
                     <div class="menu__toggle">

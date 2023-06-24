@@ -4,13 +4,11 @@
 //resets
 @import 'resets';
 
-// componentes 
-@import 'componentes/main';
-
 // projeto
 @import 'config';
 @import 'fontes';
 @import 'cores';
+@import 'componentes';
 @import 'header';
 @import 'footer';
 @import 'blocos';

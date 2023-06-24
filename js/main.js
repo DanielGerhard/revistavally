@@ -71,6 +71,7 @@ if (headerSearchbar) {
             document.activeElement.blur()
         }
     })
+    
     document.addEventListener('keydown', function (event) {
         if (event.key === "Escape" && headerSearchbar.classList.contains('ativo')) {
             headerSearchbar.classList.remove('ativo')

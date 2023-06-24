@@ -1,0 +1,27 @@
+.banner-home {
+    padding: 40px 0;
+    .bl-header-wrap {
+        margin-bottom: 22px;
+
+        .titulo {
+            margin-bottom: 8px;
+        }
+    }
+
+    .img.banner-destaque {
+        aspect-ratio: 10/6;
+    }
+
+    .cp-post{
+        .picture-padrao{
+            aspect-ratio: 7/4;
+            margin-bottom: 10px;
+        }
+        .meta-post {
+            margin-bottom: 10px;
+        }
+        .resumo-post {
+            margin-bottom: -10px;
+        }
+    }
+}
