@@ -80,3 +80,32 @@ if (headerSearchbar) {
         }
     })
 }
+
+
+// Swiper mais materias
+if (typeof Swiper === 'function') {
+    new Swiper("[e-swiper-materias]", {
+        effect: 'slide',
+        loop: true,
+        preloadImages: false,
+        lazy: true,
+        slidesPerView: 2,
+        spaceBetween: 24,
+        navigation: {
+            nextEl: '[e-swiper-materias-btn-prev]',
+            prevEl: '[e-swiper-materias-btn-next]',
+        },
+        breakpoints: {
+            // 992: {
+            //     slidesPerView: 4,
+            // },
+            // 768: {
+            //     slidesPerView: 3,
+            // },
+            // 576: {
+            //     slidesPerView: 2,
+            // }
+        }
+    });
+}
+

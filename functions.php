@@ -7,7 +7,7 @@ function getImg($img = 'placeholder.jpg')
     return $imgPath;
 }
 
-function includeTagPadrao($texto='', $classe='')
+function includeTagPadraoLink($texto = '', $classe = '')
 {
 ?>
     <a class="tag-padrao <?php echo $classe; ?>">
@@ -21,5 +21,22 @@ function includeTagPadrao($texto='', $classe='')
             <canvas></canvas>
         </div>
     </a>
+<?php
+}
+
+function includeTagPadrao($texto = '', $classe = '')
+{
+?>
+    <div class="tag-padrao <?php echo $classe; ?>">
+        <h3><strong><?php echo $texto; ?></strong></h3>
+        <div class="bandeira-listrada">
+            <canvas></canvas>
+            <canvas></canvas>
+            <canvas></canvas>
+            <canvas></canvas>
+            <canvas></canvas>
+            <canvas></canvas>
+        </div>
+    </div>
 <?php
 }

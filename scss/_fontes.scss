@@ -42,7 +42,7 @@
     --fonte-grande: var(--fonte-34px);
     --fonte-extra-grande: var(--fonte-48px);
 
-    @include media-breakpoint-down(lg){
+    @include media-breakpoint-down(lg) {
         --fonte-media-grande: var(--fonte-22px);
     }
 }
@@ -66,8 +66,10 @@ strong {
 }
 
 .titulo {
+    font-family: var(--fonte-secundaria);
     font-size: var(--fonte-normal);
-    line-height: 1.5em;
+    line-height: 1.4em;
+    letter-spacing: 0.01em;
 
     &.menor {
         font-size: var(--fonte-18px);
@@ -91,7 +93,7 @@ strong {
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.35em;
 }
 
 .destacado {

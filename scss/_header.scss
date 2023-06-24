@@ -1,6 +1,10 @@
 :root {
     --altura-header: 112px;
     --largura-menu: 320px;
+    
+    @include media-breakpoint-down(lg) {
+        --altura-header: 90px;
+    }
 }
 
 header {
@@ -92,7 +96,8 @@ header {
                 top: 0;
                 left: 45px;
                 z-index: 100;
-                @include media-breakpoint-down(lg){
+
+                @include media-breakpoint-down(lg) {
                     left: 15px;
                 }
 
@@ -197,6 +202,10 @@ header {
 
         .logo {
             width: 112px;
+
+            @include media-breakpoint-down(lg) {
+                width: 90px;
+            }
         }
 
         .search-bar {

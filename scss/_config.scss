@@ -6,6 +6,24 @@ main {
     scroll-margin-top: var(--altura-header);
 }
 
+.inner-container {
+    position: relative;
+}
+
+.diplay {
+    &-mobile {
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+    }
+
+    &-desktop {
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+}
+
 .row>* {
     position: relative;
 }
@@ -20,7 +38,7 @@ main {
     }
 }
 
-.document-wrap{
+.document-wrap {
     overflow: hidden;
     position: relative;
 }
@@ -67,6 +85,30 @@ main {
         object-fit: cover;
         object-position: center;
     }
+}
+
+.px-bl-xs {
+    padding: 20px 0;
+}
+
+.px-bl-s {
+    padding: 32px 0;
+}
+
+.px-bl-m {
+    padding: 48px 0;
+}
+
+.px-bl-l {
+    padding: 60px 0;
+}
+
+.px-bl-xl {
+    padding: 80px 0;
+}
+
+.px-bl-xxl {
+    padding: 100px 0;
 }
 
 // .focus-border {
