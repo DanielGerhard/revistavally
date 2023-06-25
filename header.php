@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.css" integrity="sha512-Aeqz1zfbRIQHDPsvEobXzaeXDyh8CUqRdvy6QBCQEbxIc/vazrTdpjEufMbxSW61+7a5vIDDuGh8z5IekVG0YA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css'; ?>">
-    <?php /* <style>
+    <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css'; ?>"> -->
+    <style>
         <?php include get_template_directory() . '/style.css'; ?>
-    </style> */ ?>
+    </style>
 </head>
 
 <body>
@@ -44,6 +44,13 @@
                     </div>
                     <nav e-menu class="menu">
                         <ul>
+                            <?php
+                            if (!is_front_page()) {
+                            ?>
+                                <li class="menu-titulo"><strong><a href="">Home</a></strong></li>
+                            <?php
+                            }
+                            ?>
                             <li class="menu-titulo"><strong>Assuntos</strong></li>
                             <li>
                                 <nav>
@@ -67,7 +74,7 @@
                             <li class="menu-titulo"><a href=""><strong>Quem somos</strong></a></li>
                             <li class="menu-titulo"><a href=""><strong>Contato</strong></a></li>
                         </ul>
-                        <canvas class="gradiente-colorido separador-menu"></canvas>
+                        <canvas class="gradiente-bandeira separador-menu"></canvas>
                         <div class="redes">
                             <a href="mailto:" class="mail" target="_blank" rel="noopener noreferrer">
                                 <?php include 'img/svg/mail-icon.svg'; ?>
@@ -88,7 +95,7 @@
                     </a>
 
                     <nav class="search-bar" e-header-searchbar>
-                        <form action="<?php echo site_url('search'); ?>">
+                        <form action="<?php echo site_url(); ?>">
                             <button e-search-btn type="submit"><?php include 'img/svg/search-icon.svg'; ?></button>
                             <input id="searchbar" e-searchbar type="text" name="s" placeholder="pesquisar">
                             <button e-clear-searchbar><?php include 'img/svg/close-btn.svg'; ?></button>

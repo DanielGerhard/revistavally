@@ -1,27 +1,29 @@
 <?php get_header(); ?>
 
 <main class="page<?php echo $post->post_name; ?>">
+
+    <?php /* BANNER */ ?>
     <section class="banner-home">
         <div class="container">
             <div class="bl-header-wrap">
                 <div class="row align-items-end">
-                    <div class="col-lg-7">
-                        <h2 class="titulo maior"><strong>Lorem ipsum dolor sit amet consec tetur adi sicing elit. Accusantium providen.</strong></h2>
-                        <picture class="picture-padrao img-banner-destaque display-desktop">
-                            <img src="<?php echo getImg(); ?>" alt="">
-                        </picture>
-                        <div class="conteudo">
-                            <div class="meta-post maior">
-                                <?php includeTagPadrao('Shows'); ?>
-                                <div class="inner">
-                                    <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
-                                    <p class="texto-cinza data-publicacao">05 junho, 2023</p>
+                    <div class="col-lg-7 mb-lg-0 mb-4">
+                        <div class="cp-post">
+                            <h2 class="titulo maior"><strong>Lorem ipsum dolor sit amet consec tetur adi sicing elit. Accusantium providen.</strong></h2>
+                            <picture class="picture-padrao img-banner-destaque display-mobile">
+                                <img src="<?php echo getImg(); ?>" alt="">
+                            </picture>
+                            <div class="conteudo">
+                                <div class="meta-post maior">
+                                    <?php includeTagPadrao('Shows'); ?>
+                                    <div class="inner display-mobile">
+                                        <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
+                                        <p class="texto-cinza data-publicacao">05 junho, 2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="resumo-post display-mobile">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae perferendis maiores voluptate sit, eligendi, cupiditate repellendus inventore odio iste nisi suscipit? Quibusdam laborum soluta et doloribus ab laudantium sed dolores.
-                                </p>
+                                <div class="resumo-post display-mobile">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae perferendis maiores voluptate sit, eligendi, cupiditate repellendus inventore odio iste nisi suscipit? Quibusdam laborum soluta et doloribus ab laudantium sed dolores.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -39,11 +41,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+
+            <div class="row display-desktop">
                 <div class="col-lg-8 col-md-7">
-                    <a href="">
-                        <picture class="picture-padrao img-banner-destaque d-lg-none d-block"><img src="<?php echo getImg(); ?>" alt=""></picture>
-                    </a>
+                    <div class="cp-post">
+                        <a href="">
+                            <picture class="picture-padrao img-banner-destaque"><img src="<?php echo getImg(); ?>" alt=""></picture>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-5">
                     <div class="cp-post">
@@ -53,7 +58,9 @@
                             </picture>
                         </a>
                         <div class="conteudo">
-                            <a href="" class="titulo"><strong>Shuri the Queen e Júlia Brito.</strong></a>
+                            <a href="" class="">
+                                <h3 class="titulo"><strong>Shuri the Queen e Júlia Brito.</strong></h3>
+                            </a>
                             <div class="meta-post">
                                 <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
                                 <p class="texto-cinza data-publicacao">05 junho, 2023</p>
@@ -67,17 +74,26 @@
             </div>
         </div>
     </section>
+    <?php /* --- */ ?>
 
+    <?php /* POST DESTAQUE */ ?>
     <section class="bl-post-destaque">
         <div class="container">
             <canvas class="linha gradiente-bandeira"></canvas>
             <div class="cp-post">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="conteudo">
                             <a href="" class="titulo"><strong>Lorem, ipsum dolor sit amet adipisicing elit. Nobis porro quasi sit amet elit. Nobis porro quasi </strong></a>
+                            <div class="col-lg-6 display-mobile">
+                                <a href="">
+                                    <picture class="picture-padrao">
+                                        <img src="<?php echo getImg() ?>" alt="">
+                                    </picture>
+                                </a>
+                            </div>
                             <div class="meta-post maior">
-                                <?php includeTagPadrao('Debate'); ?>
+                                <?php includeTagPadrao('Debate', 'd-sm-flex d-none'); ?>
                                 <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
                                 <p class="texto-cinza data-publicacao">05 junho, 2023</p>
                             </div>
@@ -94,7 +110,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6 display-desktop">
                         <a href="">
                             <picture class="picture-padrao">
                                 <img src="<?php echo getImg() ?>" alt="">
@@ -105,7 +121,9 @@
             </div>
         </div>
     </section>
+    <?php /* --- */ ?>
 
+    <?php /* LISTAGEM CATEGORIA 3 ITEMS */ ?>
     <section class="bl-listagem-categoria items-3 px-bl-xs">
         <div class="container">
             <div class="header-listagem-categoria">
@@ -113,9 +131,9 @@
                 <canvas class="linha gradiente-bandeira"></canvas>
             </div>
             <div class="row px-bl-m">
-                <?php for ($i = 0; $i < 3; $i++) { ?>
-                    <div class="col-lg-4">
-                        <a href="" class="cp-post">
+                <?php for ($i = 0; $i < 4; $i++) { ?>
+                    <div class="col-lg-4 col-6">
+                        <a href="" class="cp-post categoria">
                             <picture class="picture-padrao">
                                 <img src="<?php echo getImg(); ?>" alt="">
                             </picture>
@@ -139,7 +157,9 @@
             </div>
         </div>
     </section>
+    <?php /* --- */ ?>
 
+    <?php /* LISTAGEM CATEGORIA 2 ITEMS */ ?>
     <section class="bl-listagem-categoria items-2">
         <div class="container">
             <div class="header-listagem-categoria">
@@ -147,8 +167,8 @@
                 <canvas class="linha gradiente-bandeira"></canvas>
             </div>
             <div class="row px-bl-m">
-                <div class="col-lg-7">
-                    <a href="" class="cp-post">
+                <div class="col-lg-7 col-6">
+                    <a href="" class="cp-post categoria">
                         <picture class="picture-padrao">
                             <img src="<?php echo getImg(); ?>" alt="">
                         </picture>
@@ -168,8 +188,8 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-5">
-                    <a href="" class="cp-post">
+                <div class="col-lg-5 col-6">
+                    <a href="" class="cp-post categoria">
                         <picture class="picture-padrao">
                             <img src="<?php echo getImg(); ?>" alt="">
                         </picture>
@@ -192,7 +212,9 @@
             </div>
         </div>
     </section>
+    <?php /* --- */ ?>
 
+    <?php /* SWIPPER MAIS MATÉRIAS */ ?>
     <section class="bl-swiper-materias">
         <div class="bl-header-wrap">
             <h2 class="titulo menor"><strong>Veja mais materias</strong></h2>
@@ -213,7 +235,7 @@
                                                 <div class="meta-post">
                                                     <?php includeTagPadrao('Shows', 'menor'); ?>
                                                     <div class="inner">
-                                                        <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
+                                                        <p class="texto-cinza autor">Por: Lorem ipsum</p>
                                                         <p class="texto-cinza data-publicacao">05 junho, 2023</p>
                                                     </div>
                                                 </div>
@@ -228,11 +250,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-button-prev" e-swiper-materias-btn-prev><?php include 'img/svg/seta-expansiva.svg'; ?></div>
-                <div class="swiper-button-next" e-swiper-materias-btn-next><?php include 'img/svg/seta-expansiva.svg'; ?></div>
+                <div class="swiper-button-prev display-desktop" e-swiper-materias-btn-prev><?php include 'img/svg/seta-expansiva.svg'; ?></div>
+                <div class="swiper-button-next display-desktop" e-swiper-materias-btn-next><?php include 'img/svg/seta-expansiva.svg'; ?></div>
             </div>
         </div>
     </section>
+    <?php /* --- */ ?>
 
 </main>
 

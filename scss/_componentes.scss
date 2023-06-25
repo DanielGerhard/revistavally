@@ -1,3 +1,151 @@
+.search-bar {
+    position: fixed;
+    right: 45px;
+    top: 0;
+    height: var(--altura-header);
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    transition: background-color 0.2;
+
+    @include media-breakpoint-down(lg) {
+        right: 15px;
+    }
+
+    form {
+        display: flex;
+        position: relative;
+        width: fit-content;
+        overflow: hidden;
+
+        input {
+            font-size: var(--fonte-pequena);
+            background-color: var(--cor-auxiliar-escura);
+            width: 0px;
+            padding: 0px;
+            height: 40px;
+            border-radius: 0 8px 8px 0;
+            transition: width 0.2s, padding 0.2s;
+        }
+
+        button[type="submit"] {
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        button[e-clear-searchbar] {
+            display: none;
+            position: absolute;
+            height: 100%;
+            aspect-ratio: 1/1;
+            right: 5px;
+
+            &:hover {
+                svg {
+                    opacity: 0.2;
+                }
+            }
+
+            svg {
+                display: flex;
+                margin: 0 auto;
+                width: 20PX;
+                fill: #000;
+                opacity: 0.1;
+                transition: opacity 0.2s;
+            }
+        }
+    }
+
+    &.ativo {
+        form {
+            button[type="submit"] {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--cor-auxiliar-escura);
+                border-radius: 8px 0 0 8px;
+                width: 40px;
+                position: relative;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            button[e-clear-searchbar] {
+                display: block;
+            }
+
+            input {
+                width: 256px;
+                padding: 10px;
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            background-color: var(--cor-auxiliar-escura);
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+    }
+
+    &:not(.ativo) {
+        button[e-clear-searchbar] {
+            display: none !important;
+        }
+    }
+
+    // Variações
+}
+
+.redes {
+    display: flex;
+    margin-top: 16px;
+    gap: 4px;
+
+    a {
+        padding: 8px;
+        background-color: transparent;
+        transition: background-color 0.2s;
+        border-radius: 50%;
+
+        &:hover,
+        &:focus {
+            &.whatsapp {
+                background-color: var(--cor-whatsapp);
+            }
+
+            &.instagram {
+                background-color: var(--cor-instagram);
+            }
+
+            &.mail {
+                background-color: var(--cor-mail);
+            }
+
+            svg {
+                fill: #fff;
+            }
+        }
+
+        svg {
+            fill: var(--cor-fonte);
+            transition: fill 0.2s;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+}
+
 .linha {
     width: 100%;
     display: block;
@@ -90,6 +238,10 @@
     padding: 16px 24px;
     padding-right: 0px;
 
+    @include media-breakpoint-down(lg) {
+        padding: 16px 24px;
+    }
+
     .gradiente-bandeira {
         display: block;
         position: absolute;
@@ -101,6 +253,10 @@
         right: 0;
         bottom: 0;
         z-index: -1;
+
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+        }
     }
 
     .conteudo {
@@ -109,7 +265,6 @@
         align-items: start;
         text-shadow: 0 2px 0 #000;
         max-width: 70%;
-
 
         .titulo {
             margin-bottom: 10px;
@@ -135,7 +290,21 @@
 
 .cp-post {
     .conteudo {
-        padding: 0 10px;
+        &.com-padding {
+            padding: 0 10px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            padding: 0;
+        }
+
+        .titulo {
+            display: block;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 20px;
+            }
+        }
 
         .meta-post {
             margin-top: 10px;
@@ -176,21 +345,47 @@
 
     .cta-link {
         margin-top: 20px;
+
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
     }
 
     //Variações 
-
     &.horizontal {
         display: grid;
+        gap: 10px;
         grid-template-columns: 2fr 5fr;
+
+        @include media-breakpoint-down(md) {
+            grid-template-columns: 1fr;
+        }
+
+        .conteudo {
+            @include media-breakpoint-down(md) {
+                >* {
+                    &:not(.titulo) {
+                        display: none;
+                    }
+                }
+            }
+        }
 
         .picture-padrao {
             aspect-ratio: 1/1;
         }
 
+        .titulo {
+            @include media-breakpoint-down(md) {
+                font-size: var(--fonte-tamanaho-padrao);
+                margin-bottom: 10px;
+            }
+        }
+
         .meta-post {
             margin-top: 0px;
             display: block;
+
 
             .texto-cinza {
                 font-size: var(--fonte-extra-pequena);
@@ -207,6 +402,49 @@
             margin-top: 0;
             font-size: var(--fonte-pequena);
         }
+
+        // Variações -> Horizontal
+        &.resultado-busca {
+            grid-template-columns: 7fr 3fr;
+            gap: 24px;
+        }
+
+    }
+
+    &.categoria {
+        .titulo {
+            @include media-breakpoint-down(md) {
+                font-size: var(--fonte-tamanaho-padrao);
+                margin-bottom: 0;
+            }
+        }
+
+        .picture-padrao {
+            @include media-breakpoint-down(md) {
+                height: auto;
+                aspect-ratio: 9/7;
+            }
+        }
+
+        .meta-post {
+            @include media-breakpoint-down(md) {
+                margin-top: 0;
+            }
+
+            >* {
+                &:not(.data-publicacao) {
+                    @include media-breakpoint-down(md) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .resumo-post {
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
     }
 
 }
@@ -220,7 +458,6 @@ a {
         }
     }
 }
-
 
 .cta-link {
     display: flex;
@@ -256,7 +493,6 @@ a {
     width: 100%;
     gap: 30px;
 }
-
 
 .swiper {
     &-button-prev {

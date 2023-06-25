@@ -89,22 +89,16 @@ if (typeof Swiper === 'function') {
         loop: true,
         preloadImages: false,
         lazy: true,
-        slidesPerView: 2,
+        slidesPerView: 1.5,
         spaceBetween: 24,
         navigation: {
             nextEl: '[e-swiper-materias-btn-prev]',
             prevEl: '[e-swiper-materias-btn-next]',
         },
         breakpoints: {
-            // 992: {
-            //     slidesPerView: 4,
-            // },
-            // 768: {
-            //     slidesPerView: 3,
-            // },
-            // 576: {
-            //     slidesPerView: 2,
-            // }
+             768: {
+                 slidesPerView: 2,
+             },
         }
     });
 }

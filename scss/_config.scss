@@ -10,16 +10,16 @@ main {
     position: relative;
 }
 
-.diplay {
+.display {
     &-mobile {
         @include media-breakpoint-up(lg) {
-            display: none;
+            display: none !important;
         }
     }
 
     &-desktop {
         @include media-breakpoint-down(lg) {
-            display: none;
+            display: none !important;
         }
     }
 }
@@ -97,10 +97,18 @@ main {
 
 .px-bl-m {
     padding: 48px 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 32px 0;
+    }
 }
 
 .px-bl-l {
     padding: 60px 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 32px 0;
+    }
 }
 
 .px-bl-xl {

@@ -4,11 +4,17 @@
     .bl-header-wrap {
         margin-bottom: 22px;
 
-        .titulo {
-            margin-bottom: 8px;
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 0;
+        }
 
-            @include media-breakpoint-down(lg) {
-                margin-bottom: 20px;
+        .cp-post {
+            .titulo {
+                margin-bottom: 8px;
+
+                @include media-breakpoint-down(lg) {
+                    margin-bottom: 20px;
+                }
             }
         }
     }
@@ -35,10 +41,10 @@
                 margin-bottom: 20px;
             }
 
-            .inner{
+            .inner {
                 display: flex;
 
-                @include media-breakpoint-down(lg){
+                @include media-breakpoint-down(lg) {
                     flex-direction: column;
                 }
             }
@@ -51,11 +57,19 @@
 
     .linha {
         margin-bottom: 50px;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 40px;
+        }
     }
 
     .conteudo {
         .meta-post {
             margin-top: 16px;
+
+            @include media-breakpoint-down(sm) {
+                justify-content: space-between;
+            }
         }
 
         .resumo-post {
@@ -70,6 +84,24 @@
 }
 
 .bl-listagem-categoria {
+    .row {
+        @include media-breakpoint-down(lg) {
+            gap: 40px 0;
+        }
+
+        @include media-breakpoint-down(md) {
+            gap: 16px 0;
+        }
+
+        >* {
+            &:nth-child(4n) {
+                @include media-breakpoint-up(lg) {
+                    display: none;
+                }
+            }
+        }
+    }
+
     .meta-post {
         justify-content: space-between;
     }
@@ -98,4 +130,8 @@
             top: -1em;
         }
     }
+}
+
+.bl-header-pesquisa {
+    
 }

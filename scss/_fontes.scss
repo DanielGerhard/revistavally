@@ -80,6 +80,12 @@ strong {
         line-height: 1.1em;
     }
 
+    &.extra-bold {
+        strong{
+            font-weight: 800;
+        }
+    }
+
     &+p {
         margin-top: 10px;
 
@@ -115,4 +121,10 @@ p {
 
 .texto-cinza {
     opacity: 0.7;
+}
+
+.hover-underline {
+    &:hover{
+        text-decoration: underline;
+    }
 }

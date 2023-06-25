@@ -14,7 +14,7 @@ header {
     width: 100%;
     background-color: #fff;
     height: var(--altura-header);
-    z-index: 5;
+    z-index: 9999;
 
     .header-wrapper {
         display: flex;
@@ -158,46 +158,6 @@ header {
                 border-radius: 70px;
                 height: 2px;
             }
-
-            .redes {
-                display: flex;
-                margin-top: 16px;
-                gap: 4px;
-
-                a {
-                    padding: 8px;
-                    background-color: transparent;
-                    transition: background-color 0.2s;
-                    border-radius: 50%;
-
-                    &:hover,
-                    &:focus {
-                        &.whatsapp {
-                            background-color: var(--cor-whatsapp);
-                        }
-
-                        &.instagram {
-                            background-color: var(--cor-instagram);
-                        }
-
-                        &.mail {
-                            background-color: var(--cor-mail);
-                        }
-
-                        svg {
-                            fill: #fff;
-                        }
-                    }
-
-                    svg {
-                        fill: var(--cor-fonte);
-                        transition: fill 0.2s;
-                        width: 24px;
-                        height: 24px;
-                    }
-                }
-
-            }
         }
 
         .logo {
@@ -205,113 +165,6 @@ header {
 
             @include media-breakpoint-down(lg) {
                 width: 90px;
-            }
-        }
-
-        .search-bar {
-            position: fixed;
-            right: 45px;
-            top: 0;
-            height: var(--altura-header);
-            background-color: transparent;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            user-select: none;
-            transition: background-color 0.2;
-
-            @include media-breakpoint-down(lg) {
-                right: 15px;
-            }
-
-            form {
-                display: flex;
-                position: relative;
-                width: fit-content;
-                overflow: hidden;
-
-                input {
-                    font-size: var(--fonte-pequena);
-                    background-color: var(--cor-auxiliar-escura);
-                    width: 0px;
-                    padding: 0px;
-                    height: 40px;
-                    border-radius: 0 8px 8px 0;
-                    transition: width 0.2s, padding 0.2s;
-                }
-
-                button[type="submit"] {
-                    svg {
-                        width: 32px;
-                        height: 32px;
-                    }
-                }
-
-                button[e-clear-searchbar] {
-                    display: none;
-                    position: absolute;
-                    height: 100%;
-                    aspect-ratio: 1/1;
-                    right: 5px;
-
-                    &:hover {
-                        svg {
-                            opacity: 0.2;
-                        }
-                    }
-
-                    svg {
-                        display: flex;
-                        margin: 0 auto;
-                        width: 20PX;
-                        fill: #000;
-                        opacity: 0.1;
-                        transition: opacity 0.2s;
-                    }
-                }
-            }
-
-            &.ativo {
-                form {
-                    button[type="submit"] {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: var(--cor-auxiliar-escura);
-                        border-radius: 8px 0 0 8px;
-                        width: 40px;
-                        position: relative;
-
-                        svg {
-                            width: 20px;
-                            height: 20px;
-                        }
-                    }
-
-                    button[e-clear-searchbar] {
-                        display: block;
-                    }
-
-                    input {
-                        width: 256px;
-                        padding: 10px;
-                    }
-                }
-
-                @include media-breakpoint-down(lg) {
-                    background-color: var(--cor-auxiliar-escura);
-                    left: 0;
-                    right: 0;
-                    z-index: 100;
-                }
-
-            }
-
-            &:not(.ativo) {
-                button[e-clear-searchbar] {
-                    display: none !important;
-                }
             }
         }
     }
