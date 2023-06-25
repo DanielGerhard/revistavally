@@ -9,25 +9,28 @@
                 <div class="row align-items-end">
                     <div class="col-lg-7 mb-lg-0 mb-4">
                         <div class="cp-post">
-                            <h2 class="titulo maior"><strong>Lorem ipsum dolor sit amet consec tetur adi sicing elit. Accusantium providen.</strong></h2>
+                            <a href="<?php echo get_the_permalink(16); ?>">
+                                <h2 class="titulo maior"><strong><?php echo get_the_title(16) ?></strong></h2>
+                            </a>
                             <picture class="picture-padrao img-banner-destaque display-mobile">
-                                <img src="<?php echo getImg(); ?>" alt="">
+                                <img loading="lazy" src="<?php echo get_field('imagem_destaque', 16)['sizes']['thumbnail']; ?>" alt="">
                             </picture>
                             <div class="conteudo">
                                 <div class="meta-post maior">
-                                    <?php includeTagPadrao('Shows'); ?>
+                                    <?php includeTagPadraoLink('Debate'); ?>
                                     <div class="inner display-mobile">
                                         <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
                                         <p class="texto-cinza data-publicacao">05 junho, 2023</p>
                                     </div>
                                 </div>
                                 <div class="resumo-post display-mobile">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae perferendis maiores voluptate sit, eligendi, cupiditate repellendus inventore odio iste nisi suscipit? Quibusdam laborum soluta et doloribus ab laudantium sed dolores.</p>
+                                    <p><?php echo get_field('resumo', 16) ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 offset-lg-1">
+
                         <a href="" class="anuncio-banner">
                             <canvas class="gradiente-bandeira"></canvas>
                             <div class="conteudo">
@@ -35,9 +38,9 @@
                                 <p class="maior">Lorem ipsum dolor sit amet consec. amet consecamet consec. amet consec. et consec.et consec.</p>
                             </div>
                             <picture class="picture-padrao">
-                                <img src="<?php echo getImg(); ?>" alt="">
+                                <img loading="lazy" src="<?php echo get_field('imagem_destaque', 70)['sizes']['thumbnail']; ?>" alt="">
                             </picture>
-                        </a>
+                        </a> 
                     </div>
                 </div>
             </div>
@@ -45,29 +48,27 @@
             <div class="row display-desktop">
                 <div class="col-lg-8 col-md-7">
                     <div class="cp-post">
-                        <a href="">
-                            <picture class="picture-padrao img-banner-destaque"><img src="<?php echo getImg(); ?>" alt=""></picture>
+                        <a href="<?php echo get_the_permalink(16); ?>">
+                            <picture class="picture-padrao img-banner-destaque"><img src="<?php echo get_field('imagem_destaque', 16)['sizes']['thumbnail']; ?>" alt=""></picture>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-5">
                     <div class="cp-post">
-                        <a href="">
+                        <a href="<?php echo get_the_permalink(58); ?>">
                             <picture class="picture-padrao">
-                                <img src="<?php echo getImg(); ?>" alt="">
+                                <img loading="lazy" src="<?php echo get_field('imagem_destaque', 58)['sizes']['thumbnail']; ?>" alt="">
                             </picture>
                         </a>
-                        <div class="conteudo">
-                            <a href="" class="">
-                                <h3 class="titulo"><strong>Shuri the Queen e Júlia Brito.</strong></h3>
+                        <div class="conteudo com-padding">
+                            <a href="<?php echo get_the_permalink(58);; ?>" class="">
+                                <h3 class="titulo"><strong><?php echo get_the_title(58) ?></strong></h3>
                             </a>
                             <div class="meta-post">
                                 <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
                                 <p class="texto-cinza data-publicacao">05 junho, 2023</p>
                             </div>
-                            <p class="resumo-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium provident cumque dolore quibusdamLorem ipsum dol.. sit consectetur Accusantium providen qu...
-                                dolore quibusd arovident cumque dolore quibusdarovident cumque dolore quibusdarovident cumque dolore quibusda
-                            </p>
+                            <p class="resumo-post"><?php echo get_field('resumo', 58); ?></p>
                         </div>
                     </div>
                 </div>
@@ -84,16 +85,16 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="conteudo">
-                            <a href="" class="titulo"><strong>Lorem, ipsum dolor sit amet adipisicing elit. Nobis porro quasi sit amet elit. Nobis porro quasi </strong></a>
+                            <a href="<?php echo get_the_permalink(61); ?>" class="titulo"><strong><?php echo get_the_title(61) ?></strong></a>
                             <div class="col-lg-6 display-mobile">
                                 <a href="">
                                     <picture class="picture-padrao">
-                                        <img src="<?php echo getImg() ?>" alt="">
+                                        <img loading="lazy" src="<?php echo get_field('imagem_destaque', 61)['sizes']['thumbnail'] ?>" alt="">
                                     </picture>
                                 </a>
                             </div>
                             <div class="meta-post maior">
-                                <?php includeTagPadrao('Debate', 'd-sm-flex d-none'); ?>
+                                <?php includeTagPadraoLink('Debate', 'd-sm-flex d-none'); ?>
                                 <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
                                 <p class="texto-cinza data-publicacao">05 junho, 2023</p>
                             </div>
@@ -104,16 +105,16 @@
                                     Laborum cum molestiae, ducimus modi accusamus numquam tempora accusantium officiis architecto debitis ratione asperiores hic, sapiente porro? Pariatur aspernatur tenetur voluptatem architecto, modi dolorum, aliquam voluptas quod similique, amet optio.
                                 </p>
                             </div>
-                            <a href="" class="cta-link">
+                            <a href="<?php echo get_the_permalink(61); ?>" class="cta-link">
                                 <?php include 'img/svg/seta-expansiva.svg'; ?>
                                 <span>Leia mais</span>
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-6 display-desktop">
-                        <a href="">
+                        <a href="<?php echo get_the_permalink(55); ?>">
                             <picture class="picture-padrao">
-                                <img src="<?php echo getImg() ?>" alt="">
+                                <img loading="lazy" src="<?php echo get_field('imagem_destaque', 61)['sizes']['thumbnail'] ?>" alt="">
                             </picture>
                         </a>
                     </div>
@@ -127,22 +128,22 @@
     <section class="bl-listagem-categoria items-3 px-bl-xs">
         <div class="container">
             <div class="header-listagem-categoria">
-                <?php includeTagPadrao('Parada Livre'); ?>
+                <?php includeTagPadraoLink('Parada Livre'); ?>
                 <canvas class="linha gradiente-bandeira"></canvas>
             </div>
             <div class="row px-bl-m">
                 <?php for ($i = 0; $i < 4; $i++) { ?>
                     <div class="col-lg-4 col-6">
-                        <a href="" class="cp-post categoria">
+                        <a href="<?php echo get_the_permalink(64); ?>" class="cp-post categoria">
                             <picture class="picture-padrao">
-                                <img src="<?php echo getImg(); ?>" alt="">
+                                <img loading="lazy" src="<?php echo get_field('imagem_destaque', 64)['sizes']['thumbnail']; ?>" alt="">
                             </picture>
                             <div class="conteudo">
                                 <div class="meta-post">
                                     <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
                                     <p class="texto-cinza data-publicacao">05 junho, 2023</p>
                                 </div>
-                                <h3 class="titulo"><strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis porro quasi </strong></h3>
+                                <h3 class="titulo"><strong><?php echo get_the_title(64) ?></strong></h3>
                                 <div class="resumo-post maior exibir-3">
                                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, qui quia. Obcaecati at inventore earum, quasi nostrum a quis neque quia sint quaerat, alias iure architecto veniam deleniti. Dolorum, error.</p>
                                 </div>
@@ -163,21 +164,21 @@
     <section class="bl-listagem-categoria items-2">
         <div class="container">
             <div class="header-listagem-categoria">
-                <?php includeTagPadrao('Shows'); ?>
+                <?php includeTagPadraoLink('Shows'); ?>
                 <canvas class="linha gradiente-bandeira"></canvas>
             </div>
             <div class="row px-bl-m">
                 <div class="col-lg-7 col-6">
-                    <a href="" class="cp-post categoria">
+                    <a href="<?php echo get_the_permalink(58); ?>" class="cp-post categoria">
                         <picture class="picture-padrao">
-                            <img src="<?php echo getImg(); ?>" alt="">
+                            <img loading="lazy" src="<?php echo get_field('imagem_destaque', 58)['sizes']['thumbnail']; ?>" alt="">
                         </picture>
                         <div class="conteudo">
                             <div class="meta-post">
                                 <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
                                 <p class="texto-cinza data-publicacao">05 junho, 2023</p>
                             </div>
-                            <h3 class="titulo"><strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis porro quasi </strong></h3>
+                            <h3 class="titulo"><strong><?php echo get_the_title(58) ?></strong></h3>
                             <div class="resumo-post maior">
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error minima amet et excepturi. Earum officia voluptatibus facere consectetur repellendus, ex alias labore dolorum, deserunt odio maxime mollitia totam architecto tempore!</p>
                             </div>
@@ -189,16 +190,16 @@
                     </a>
                 </div>
                 <div class="col-lg-5 col-6">
-                    <a href="" class="cp-post categoria">
+                    <a href="<?php echo get_the_permalink(67); ?>" class="cp-post categoria">
                         <picture class="picture-padrao">
-                            <img src="<?php echo getImg(); ?>" alt="">
+                            <img loading="lazy" src="<?php echo get_field('imagem_destaque', 67)['sizes']['thumbnail']; ?>" alt="">
                         </picture>
                         <div class="conteudo">
                             <div class="meta-post">
                                 <p class="texto-cinza escrito-por">Por: Lorem ipsum</p>
                                 <p class="texto-cinza data-publicacao">05 junho, 2023</p>
                             </div>
-                            <h3 class="titulo"><strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis porro quasi </strong></h3>
+                            <h3 class="titulo"><strong><?php echo get_the_title(67) ?> </strong></h3>
                             <div class="resumo-post maior">
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error minima amet et excepturi. Earum officia voluptatibus facere consectetur repellendus, ex alias labore dolorum, deserunt odio maxime mollitia totam architecto tempore!</p>
                             </div>
@@ -228,10 +229,10 @@
                             <div class="swiper-wrapper">
                                 <?php for ($i = 0; $i < 9; $i++) { ?>
                                     <div class="swiper-slide">
-                                        <a href="" class="cp-post horizontal">
-                                            <picture class="picture-padrao"><img src="<?php echo getImg(); ?>" alt=""></picture>
+                                        <a href="<?php echo get_the_permalink(55); ?>" class="cp-post horizontal">
+                                            <picture class="picture-padrao"><img src="<?php echo get_field('imagem_destaque', 55)['sizes']['thumbnail']; ?>" alt=""></picture>
                                             <div class="conteudo">
-                                                <h3 class="titulo menor"><strong>Shuri the Queen e Júlia Brito</strong></h3>
+                                                <h3 class="titulo menor"><strong><?php echo get_the_title(55) ?></strong></h3>
                                                 <div class="meta-post">
                                                     <?php includeTagPadrao('Shows', 'menor'); ?>
                                                     <div class="inner">

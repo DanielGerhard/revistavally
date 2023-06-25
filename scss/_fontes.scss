@@ -30,6 +30,7 @@
     --fonte-46px: 2.875rem;
     --fonte-48px: 3rem;
     --fonte-50px: 3.125rem;
+    --fonte-80px: 5rem;
     --fonte-144px: 9rem;
 
     --default-font: 1rem; // 16px
@@ -44,6 +45,11 @@
 
     @include media-breakpoint-down(lg) {
         --fonte-media-grande: var(--fonte-22px);
+    }
+
+    @include media-breakpoint-down(lg) {
+        --fonte-media-grande: var(--fonte-22px);
+        --fonte-extra-grande: var(--fonte-32px);
     }
 }
 
@@ -80,8 +86,12 @@ strong {
         line-height: 1.1em;
     }
 
+    &.extra-grande {
+        font-size: var(--fonte-extra-grande);
+    }
+
     &.extra-bold {
-        strong{
+        strong {
             font-weight: 800;
         }
     }
@@ -124,7 +134,7 @@ p {
 }
 
 .hover-underline {
-    &:hover{
+    &:hover {
         text-decoration: underline;
     }
 }

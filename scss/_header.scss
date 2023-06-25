@@ -1,13 +1,14 @@
 :root {
-    --altura-header: 112px;
+    --altura-header: 90px;
     --largura-menu: 320px;
-    
+    --altura-assuntos-header: 32px;
+
     @include media-breakpoint-down(lg) {
         --altura-header: 90px;
     }
 }
 
-header {
+.header {
     display: flex;
     align-items: center;
     position: fixed;
@@ -103,8 +104,8 @@ header {
 
                 button {
                     display: block;
-                    width: 32px;
-                    height: 32px;
+                    width: 24px;
+                    height: 24px;
                     position: relative;
 
                     canvas {
@@ -116,7 +117,7 @@ header {
                         transition: all 0.3s;
 
                         &:not(:last-of-type) {
-                            margin-bottom: 8px;
+                            margin-bottom: 5px;
                         }
 
                         &:first-of-type {
@@ -167,5 +168,46 @@ header {
                 width: 90px;
             }
         }
+    }
+}
+
+.assuntos-header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    margin-top: var(--altura-header);
+    padding: 9px 0;
+    z-index: 5555;
+    height: var(--altura-assuntos-header);
+
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        padding: 0 20px;
+        z-index: 2;
+        gap: 10px;
+
+
+        li {
+            a {
+                font-size: var(--fonte-pequena);
+            }
+        }
+    }
+
+    .linha {
+        position: relative;
+        top: -0.5em;
     }
 }

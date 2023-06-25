@@ -1,5 +1,5 @@
 main {
-    padding-top: var(--altura-header);
+    padding-top: calc(var(--altura-header) + var(--altura-assuntos-header));
 }
 
 :target {

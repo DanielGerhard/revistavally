@@ -10,7 +10,7 @@ function getImg($img = 'placeholder.jpg')
 function includeTagPadraoLink($texto = '', $classe = '')
 {
 ?>
-    <a class="tag-padrao <?php echo $classe; ?>">
+    <a href="<?php echo site_url() . '/?s&categoria=' . strtolower($texto); ?>" class="tag-padrao <?php echo $classe; ?>">
         <h3><strong><?php echo $texto; ?></strong></h3>
         <div class="bandeira-listrada">
             <canvas></canvas>

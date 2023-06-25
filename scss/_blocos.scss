@@ -111,6 +111,12 @@
             height: 250px;
         }
     }
+
+    &.items-3 {
+        picture {
+            aspect-ratio: 5/3;
+        }
+    }
 }
 
 .bl-swiper-materias {
@@ -132,6 +138,4 @@
     }
 }
 
-.bl-header-pesquisa {
-    
-}
+.bl-header-pesquisa {}

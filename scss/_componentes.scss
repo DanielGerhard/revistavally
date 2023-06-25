@@ -33,8 +33,8 @@
 
         button[type="submit"] {
             svg {
-                width: 32px;
-                height: 32px;
+                width: 24px;
+                height: 24px;
             }
         }
 
@@ -403,10 +403,31 @@
             font-size: var(--fonte-pequena);
         }
 
-        // Variações -> Horizontal
+        // Variações da variação Horizontal
         &.resultado-busca {
-            grid-template-columns: 7fr 3fr;
+            grid-template-columns: 6fr 4fr;
             gap: 24px;
+
+            .picture-padrao {
+                aspect-ratio: 9/6;
+            }
+
+            .titulo {
+                margin-bottom: 22px;
+            }
+
+            .resumo-post {
+                margin-bottom: 10px;
+
+                @include media-breakpoint-up(md) {
+                    padding-right: 16.5%;
+                }
+            }
+
+            .meta-post {
+                display: flex;
+                gap: 22px;
+            }
         }
 
     }
@@ -446,7 +467,6 @@
             }
         }
     }
-
 }
 
 a {
@@ -525,5 +545,36 @@ a {
         &:hover {
             background-color: var(--cor-auxiliar);
         }
+    }
+}
+
+.ver-mais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 200px 0px 100px;
+
+    button {
+        font-weight: 600;
+        z-index: 2;
+        padding: 10px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(255, 255, 255);
+        background: -moz-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#ffffff", GradientType=1);
     }
 }

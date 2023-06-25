@@ -47,7 +47,7 @@
                             <?php
                             if (!is_front_page()) {
                             ?>
-                                <li class="menu-titulo"><strong><a href="">Home</a></strong></li>
+                                <li class="menu-titulo"><strong><a href="">Início</a></strong></li>
                             <?php
                             }
                             ?>
@@ -55,24 +55,24 @@
                             <li>
                                 <nav>
                                     <ul class="menu-grid-links grid">
-                                        <li><a href="">Debate</a></li>
-                                        <li><a href="">Shows</a></li>
-                                        <li><a href="">Cultura</a></li>
-                                        <li><a href="">Cultura</a></li>
+                                        <li><a href="<?php echo site_url() . '?s&categoria=debate'; ?>">Debate</a></li>
+                                        <li><a href="<?php echo site_url() . '?s&categoria=shows'; ?>">Shows</a></li>
+                                        <li><a href="<?php echo site_url() . '?s&categoria=cultura'; ?>">Cultura</a></li>
                                     </ul>
                                 </nav>
                             </li>
+                            <?php /*                             
                             <li class="menu-titulo"><strong>projetos</strong></li>
                             <li>
                                 <nav>
                                     <ul class="menu-grid-links flex">
                                         <li><a href="" target="_blank" rel="noopener noreferrer">Editorial</a></li>
-                                        <li><a href="" target="_blank" rel="noopener noreferrer">Whats do Vally</a></li>
                                     </ul>
                                 </nav>
-                            </li>
+                            </li> 
                             <li class="menu-titulo"><a href=""><strong>Quem somos</strong></a></li>
                             <li class="menu-titulo"><a href=""><strong>Contato</strong></a></li>
+                            */ ?>
                         </ul>
                         <canvas class="gradiente-bandeira separador-menu"></canvas>
                         <div class="redes">
@@ -104,3 +104,11 @@
                 </div>
             </div>
         </header>
+        <div class="assuntos-header">
+            <ul>
+                <li><a href="<?php echo site_url(); ?>?s&categoria=debate" class="hover-underline">Debate</a></li>
+                <li><a href="<?php echo site_url(); ?>?s&categoria=shows" class="hover-underline">Shows</a></li>
+                <li><a href="<?php echo site_url(); ?>?s&categoria=cultura" class="hover-underline">Cultura</a></li>
+            </ul>
+            <canvas class="linha gradiente-bandeira"></canvas>
+        </div>
