@@ -1,10 +1,12 @@
 :root {
     --altura-header: 90px;
     --largura-menu: 320px;
-    --altura-assuntos-header: 32px;
-
+    --altura-assuntos-header: 40px;
+    --altura-header-fixo: 80px;
+    
     @include media-breakpoint-down(lg) {
         --altura-header: 90px;
+        --altura-assuntos-header: 0px;
     }
 }
 
@@ -15,6 +17,7 @@
     width: 100%;
     background-color: #fff;
     height: var(--altura-header);
+    transition: height 0.3s, box-shadow 0.3s;
     z-index: 9999;
 
     .header-wrapper {
@@ -97,6 +100,7 @@
                 top: 0;
                 left: 45px;
                 z-index: 100;
+                transition: height 0.3s;
 
                 @include media-breakpoint-down(lg) {
                     left: 15px;
@@ -163,10 +167,20 @@
 
         .logo {
             width: 112px;
+            transition: width 0.3s;
 
             @include media-breakpoint-down(lg) {
                 width: 90px;
             }
+        }
+    }
+
+    &.fixado {
+        --altura-header: var(--altura-header-fixo);
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+
+        .logo {
+            width: 80px;
         }
     }
 }
@@ -181,9 +195,11 @@
     left: 0;
     background-color: #fff;
     margin-top: var(--altura-header);
-    padding: 9px 0;
+    padding: 20px 0;
     z-index: 5555;
     height: var(--altura-assuntos-header);
+    transition: height 0.3s, margin-top 0.3s, padding 0.3s;
+    overflow: hidden;
 
     @include media-breakpoint-down(md) {
         display: none;
@@ -209,5 +225,11 @@
     .linha {
         position: relative;
         top: -0.5em;
+    }
+
+    &.fixado {
+        --altura-header: var(--altura-header-fixo);
+        height: 0px;
+        padding: 0px;
     }
 }

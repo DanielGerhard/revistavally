@@ -29,8 +29,8 @@
 </head>
 
 <body>
-    <input type="hidden" id="theme_url" value="<?php echo get_template_directory_uri(); ?>">
-    <input type="hidden" id="ajax_url" value="<?php echo admin_url('admin-ajax.php'); ?>">
+    <input type="hidden" id="theme-url" value="<?php echo get_template_directory_uri(); ?>">
+    <input type="hidden" id="ajax-url" value="<?php echo admin_url('admin-ajax.php'); ?>">
     <div class="document-wrap">
         <header class="header" e-header>
             <div class="container-fluid">
@@ -47,7 +47,7 @@
                             <?php
                             if (!is_front_page()) {
                             ?>
-                                <li class="menu-titulo"><strong><a href="">Início</a></strong></li>
+                                <li class="menu-titulo"><strong><a href="<?php echo site_url(); ?>">Início</a></strong></li>
                             <?php
                             }
                             ?>
@@ -104,7 +104,7 @@
                 </div>
             </div>
         </header>
-        <div class="assuntos-header">
+        <div class="assuntos-header" e-assuntos-header>
             <ul>
                 <li><a href="<?php echo site_url(); ?>?s&categoria=debate" class="hover-underline">Debate</a></li>
                 <li><a href="<?php echo site_url(); ?>?s&categoria=shows" class="hover-underline">Shows</a></li>

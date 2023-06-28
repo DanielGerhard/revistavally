@@ -24,6 +24,8 @@ $pesquisa = $_GET['s'];
                 </div>
             </div>
             <?php
+            $queryType = 'search';
+            $query = $categoria != null ? $categoria : $pesquisa;
             $args = array(
                 $args['post_type'] =  'post',
                 'fields' => 'ids',
@@ -37,10 +39,11 @@ $pesquisa = $_GET['s'];
                         'terms' => $categoria,
                     ),
                 );
+                $queryType = 'category';
             } else {
                 $args['s'] = $_GET['s'];
             }
-            $porPagina = 9;
+            $porPagina = 8;
             $paginaAtual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
             $offset = ($paginaAtual - 1) * $porPagina;
             $args['numberposts'] = $porPagina;
@@ -61,16 +64,25 @@ $pesquisa = $_GET['s'];
             <?php
             }
             ?>
+            <div id="spawn-point"></div>
             <?php
-            /* <div e-add-aqui></div>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="ver-mais">
-                        <button e-ver-mais>+ Ver mais</button>
+            $next_page_args = $args;
+            $next_page_args['offset'] = $offset + 1 * $porPagina;
+            $next_page_posts = get_posts($next_page_args);
+            $hasMorePosts = !empty($next_page_posts); ?>
+            <?php
+            if ($hasMorePosts) {
+            ?>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="ver-mais" e-ver-mais>
+                            <button spawn-point="spawn-point" action="posts_paginados" pagina-atual="1" query-type="<?php
+                                                                                                                    echo $queryType; ?>" query="<?php echo $query; ?>" por-pagina="<?php echo $porPagina; ?>">+ Ver mais</button>
+                        </div>
                     </div>
                 </div>
-            </div> 
-            */ ?>
+            <?php } // if !$hasMorePosts 
+            ?>
         </div>
     </section>
 

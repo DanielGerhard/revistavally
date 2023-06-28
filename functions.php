@@ -40,3 +40,61 @@ function includeTagPadrao($texto = '', $classe = '')
     </div>
 <?php
 }
+
+add_action('wp_ajax_nopriv_posts_paginados', 'postsPadraoPaginados');
+add_action('wp_ajax_posts_paginados', 'postsPadraoPaginados');
+
+function postsPadraoPaginados()
+{
+    $query_type = isset($_GET['query_type']) ? $_GET['query_type'] : null;
+    $query = isset($_GET['query']) ? $_GET['query'] : '';
+    $paginaAtual = isset($_GET['pagina']) ? $_GET['pagina'] : 2;
+    $porPagina = isset($_GET['por_pagina']) ? $_GET['por_pagina'] : 9;
+
+    $args = array(
+        'post_type' => 'post',
+        'fields' => 'ids',
+        'posts_per_page' => -1,
+    );
+
+    if ($query_type == 'category') {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => $query,
+            ),
+        );
+    } else if ($query_type == 'search') {
+        $args['s'] = $query;
+    }
+
+    $offset = ($paginaAtual - 1) * $porPagina;
+    $args['posts_per_page'] = $porPagina;
+    $args['offset'] = $offset;
+
+    $posts = get_posts($args);
+    ob_start();
+    if (!empty($posts)) {
+        foreach ($posts as $post_id) {
+            include '_post-busca.php';
+        }
+    }
+    $html = ob_get_clean();
+
+    // Verificar se há mais posts
+    $next_page_args = $args;
+    $next_page_args['offset'] = $offset + 1;
+    $next_page_posts = get_posts($next_page_args);
+    $hasMorePosts = !empty($next_page_posts);
+
+    $response = array(
+        'html' => $html,
+        'has_more_posts' => $hasMorePosts,
+    );
+
+    // Enviar a resposta JSON
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit;
+}

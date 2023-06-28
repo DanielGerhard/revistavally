@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     user-select: none;
-    transition: background-color 0.2;
+    transition: background-color 0.2s, height 0.3s;
 
     @include media-breakpoint-down(lg) {
         right: 15px;
@@ -564,7 +564,8 @@ a {
         padding: 10px;
     }
 
-    &::before {
+    &::before,
+    &::after {
         content: "";
         position: absolute;
         top: 0;

@@ -12,9 +12,11 @@
                             <a href="<?php echo get_the_permalink(16); ?>">
                                 <h2 class="titulo maior"><strong><?php echo get_the_title(16) ?></strong></h2>
                             </a>
-                            <picture class="picture-padrao img-banner-destaque display-mobile">
-                                <img loading="lazy" src="<?php echo get_field('imagem_destaque', 16)['sizes']['thumbnail']; ?>" alt="">
-                            </picture>
+                            <a href="<?php echo get_the_permalink(16); ?>">
+                                <picture class="picture-padrao img-banner-destaque display-mobile">
+                                    <img loading="lazy" src="<?php echo get_field('imagem_destaque', 16)['sizes']['thumbnail']; ?>" alt="">
+                                </picture>
+                            </a>
                             <div class="conteudo">
                                 <div class="meta-post maior">
                                     <?php includeTagPadraoLink('Debate'); ?>
@@ -30,8 +32,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 offset-lg-1">
-
-                        <a href="" class="anuncio-banner">
+                        <a s class="anuncio-banner">
                             <canvas class="gradiente-bandeira"></canvas>
                             <div class="conteudo">
                                 <h2 class="titulo menor"><strong>Editorial</strong></h2>
@@ -40,7 +41,7 @@
                             <picture class="picture-padrao">
                                 <img loading="lazy" src="<?php echo get_field('imagem_destaque', 70)['sizes']['thumbnail']; ?>" alt="">
                             </picture>
-                        </a> 
+                        </a>
                     </div>
                 </div>
             </div>
@@ -61,7 +62,7 @@
                             </picture>
                         </a>
                         <div class="conteudo com-padding">
-                            <a href="<?php echo get_the_permalink(58);; ?>" class="">
+                            <a href="<?php echo get_the_permalink(58); ?>">
                                 <h3 class="titulo"><strong><?php echo get_the_title(58) ?></strong></h3>
                             </a>
                             <div class="meta-post">

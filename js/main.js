@@ -1,3 +1,25 @@
+const header = document.querySelector('[e-header]');
+const assuntosHeader = document.querySelector('[e-assuntos-header]');
+if (header) {
+    const headerHeight = header.offsetHeight;
+    let scrollHeight = window.scrollY;
+    if (scrollHeight > headerHeight) {
+        header.classList.add('fixado')
+        assuntosHeader.classList.add('fixado')
+    }
+    window.addEventListener('scroll', function () {
+        let scrollHeight = window.scrollY;
+
+        if (scrollHeight > headerHeight) {
+            header.classList.add('fixado')
+            assuntosHeader.classList.add('fixado')
+        } else {
+            header.classList.remove('fixado')
+            assuntosHeader.classList.remove('fixado')
+        }
+    });
+}
+
 // Menu
 const toggleBtn = document.querySelector('[e-toggle-btn]');
 const menu = document.querySelector('[e-menu]');
@@ -71,7 +93,7 @@ if (headerSearchbar) {
             document.activeElement.blur()
         }
     })
-    
+
     document.addEventListener('keydown', function (event) {
         if (event.key === "Escape" && headerSearchbar.classList.contains('ativo')) {
             headerSearchbar.classList.remove('ativo')
@@ -96,10 +118,41 @@ if (typeof Swiper === 'function') {
             prevEl: '[e-swiper-materias-btn-next]',
         },
         breakpoints: {
-             768: {
-                 slidesPerView: 2,
-             },
+            768: {
+                slidesPerView: 2,
+            },
         }
-    });
+    })
 }
+
+const ajaxUrl = document.querySelector('#ajax-url').value
+
+// Ver mais posts 
+const botoesVerMais = document.querySelectorAll('[e-ver-mais]')
+botoesVerMais.forEach(verMaisContainer => {
+    let verMais = verMaisContainer.querySelector('button')
+    verMais.addEventListener('click', function (evento) {
+        evento.preventDefault()
+        let spawnPointId = verMais.getAttribute('spawn-point')
+        let spawnPoint = document.querySelector('#' + spawnPointId)
+        action = verMais.getAttribute('action')
+        pagina = verMais.getAttribute('pagina-atual') ? parseInt(verMais.getAttribute('pagina-atual')) + 1 : 2
+        porPagina = verMais.getAttribute('por-pagina')
+        queryType = verMais.getAttribute('query-type')
+        query = verMais.getAttribute('query')
+
+        fetch(ajaxUrl + '?action=' + action + '&pagina=' + pagina + '&query_type=' + queryType + '&query=' + query + '&por_pagina=' + porPagina)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                spawnPoint.insertAdjacentHTML("beforebegin", data.html);
+                verMais.setAttribute('pagina-atual', pagina + 1);
+
+                if (!data.has_more_posts) {
+                    verMaisContainer.remove();
+                }
+            })
+    })
+});
 

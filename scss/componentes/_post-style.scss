@@ -18,6 +18,10 @@
         height: calc(100svh - var(--altura-header) - var(--altura-assuntos-header));
         min-height: 420px;
 
+        @include media-breakpoint-down(md){
+            height: 420px;
+        }
+
         .picture-padrao {
             height: 100%;
 
