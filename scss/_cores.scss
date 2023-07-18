@@ -27,3 +27,39 @@
     background: #fff;
     background: linear-gradient(90deg, var(--vermelho) 0%, var(--laranja) 20%, var(--amarelo) 40%, var(--verde) 60%, rgba(4, 120, 194, 1) 80%, var(--roxo) 100%);
 }
+
+.bg-fonte {
+    background: var(--cor-fonte);
+}
+
+.bg-auxiliar {
+    background: var(--cor-auxiliar);
+}
+
+.bg-auxiliar-escura {
+    background: var(--cor-auxiliar-escura);
+}
+
+.bg-vermelho {
+    background: var(--vermelho);
+}
+
+.bg-laranja {
+    background: var(--laranja);
+}
+
+.bg-amarelo {
+    background: var(--amarelo);
+}
+
+.bg-verde {
+    background: var(--verde);
+}
+
+.bg-azul {
+    background: var(--azul);
+}
+
+.bg-roxo {
+    background: var(--roxo);
+}

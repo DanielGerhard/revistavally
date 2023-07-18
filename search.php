@@ -86,5 +86,7 @@ $pesquisa = $_GET['s'];
         </div>
     </section>
 
+    <?php include '_swiper-mais-materias.php'; ?>
+
 </main>
 <?php get_footer();

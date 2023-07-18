@@ -52,6 +52,29 @@
     }
 }
 
+.banner-sobre {
+    padding-bottom: 128px;
+
+    &::before {
+        position: absolute;
+        background-color: var(--cor-auxiliar);
+        top: 500px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    h1 {
+        font-size: var(--48px);
+        padding: 32px 0;
+    }
+
+    .picture-padrao {
+        border-radius: 13px;
+        box-shadow: 13px 15px 17px rgba(0, 0, 0, 0.3);
+    }
+}
+
 .bl-post-destaque {
     padding-bottom: 40px;
 
@@ -138,4 +161,7 @@
     }
 }
 
-.bl-header-pesquisa {}
+.bl-full-texto{
+    
+}
+
