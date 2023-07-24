@@ -1,6 +1,6 @@
 <?php
 get_header();
-$categoria = isset($_GET['categoria']) ? $_GET['categoria'] : null;
+$idCategoria = isset($_GET['categoria']) ? $_GET['categoria'] : null;
 $pesquisa = $_GET['s'];
 
 ?>
@@ -10,9 +10,9 @@ $pesquisa = $_GET['s'];
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <?php
-                    if ($categoria != null) {
+                    if ($idCategoria != null) {
                     ?>
-                        <h1 class="titulo extra-bold mb-4">Matérias da categoria: <strong><?php echo $categoria; ?></strong></h1>
+                        <h1 class="titulo extra-bold mb-4">Matérias da categoria: <strong><?php echo $idCategoria; ?></strong></h1>
                     <?php
                     } else {
                     ?>
@@ -25,18 +25,18 @@ $pesquisa = $_GET['s'];
             </div>
             <?php
             $queryType = 'search';
-            $query = $categoria != null ? $categoria : $pesquisa;
+            $query = $idCategoria != null ? $idCategoria : $pesquisa;
             $args = array(
                 $args['post_type'] =  'post',
                 'fields' => 'ids',
                 'numberposts' => -1,
             );
-            if ($categoria != null) {
+            if ($idCategoria != null) {
                 $args['tax_query'] = array(
                     array(
                         'taxonomy' => 'category',
-                        'field' => 'slug',
-                        'terms' => $categoria,
+                        'field' => 'id',
+                        'terms' => $idCategoria,
                     ),
                 );
                 $queryType = 'category';
@@ -76,8 +76,7 @@ $pesquisa = $_GET['s'];
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="ver-mais" e-ver-mais>
-                            <button spawn-point="spawn-point" action="posts_paginados" pagina-atual="1" query-type="<?php
-                                                                                                                    echo $queryType; ?>" query="<?php echo $query; ?>" por-pagina="<?php echo $porPagina; ?>">+ Ver mais</button>
+                            <button spawn-point="spawn-point" action="posts_paginados" pagina-atual="1" query-type="<?php echo $queryType; ?>" query="<?php echo $query; ?>" por-pagina="<?php echo $porPagina; ?>">+ Ver mais</button>
                         </div>
                     </div>
                 </div>

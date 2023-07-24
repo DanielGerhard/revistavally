@@ -7,11 +7,13 @@ function getImg($img = 'placeholder.jpg')
     return $imgPath;
 }
 
-function includeTagPadraoLink($texto = '', $classe = '')
+function includeTagPadraoLink($idTermo, $classe = '')
 {
+
+    $termo = get_term($idTermo);
 ?>
-    <a href="<?php echo site_url() . '/?s&categoria=' . strtolower($texto); ?>" class="tag-padrao <?php echo $classe; ?>">
-        <h3><strong><?php echo $texto; ?></strong></h3>
+    <a href="<?php echo site_url() . '/?s&categoria=' . strtolower($idTermo); ?>" class="tag-padrao <?php echo $classe; ?>">
+        <h3><strong><?php echo $termo->name; ?></strong></h3>
         <div class="bandeira-listrada">
             <canvas></canvas>
             <canvas></canvas>
@@ -39,6 +41,13 @@ function includeTagPadrao($texto = '', $classe = '')
         </div>
     </div>
 <?php
+}
+
+function postAuthor($postId)
+{
+    $authorId = get_post_field('post_author', $postId);
+    $authorName = get_the_author_meta('display_name', $authorId);
+    echo $authorName;
 }
 
 add_action('wp_ajax_nopriv_posts_paginados', 'postsPadraoPaginados');
@@ -90,7 +99,7 @@ function postsPadraoPaginados()
 
     $response = array(
         'html' => $html,
-        'has_more_posts' => $hasMorePosts,
+        'has_more_posts' => $hasMorePosts, e
     );
 
     // Enviar a resposta JSON
@@ -98,3 +107,31 @@ function postsPadraoPaginados()
     echo json_encode($response);
     exit;
 }
+
+
+// Hooks
+function remover_taxonomia_tags()
+{
+    unregister_taxonomy_for_object_type('post_tag', 'post');
+}
+add_action('init', 'remover_taxonomia_tags');
+
+function desabilitar_comentarios_globais()
+{
+    return false;
+}
+add_filter('comments_open', 'desabilitar_comentarios_globais', 10, 2);
+add_filter('pings_open', 'desabilitar_comentarios_globais', 10, 2);
+
+function ocultar_aba_comentarios()
+{
+    remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'ocultar_aba_comentarios');
+
+
+// Constantes
+
+define('FRONT_PAGE_ID', get_option('page_on_front'));
+
+define('CONTATOS', get_field('contatos', FRONT_PAGE_ID));

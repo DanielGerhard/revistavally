@@ -1,3 +1,7 @@
+<?php
+$cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +22,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <?php /*     <link href="https://cdn.jsdelivr.net/npm/swiper@9.4.1/modules/scrollbar/scrollbar.min.css" rel="stylesheet"> */ ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.css" integrity="sha512-Aeqz1zfbRIQHDPsvEobXzaeXDyh8CUqRdvy6QBCQEbxIc/vazrTdpjEufMbxSW61+7a5vIDDuGh8z5IekVG0YA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
@@ -55,36 +58,52 @@
                             <li>
                                 <nav>
                                     <ul class="menu-grid-links grid">
-                                        <li><a href="<?php echo site_url() . '?s&categoria=debate'; ?>">Debate</a></li>
-                                        <li><a href="<?php echo site_url() . '?s&categoria=shows'; ?>">Shows</a></li>
-                                        <li><a href="<?php echo site_url() . '?s&categoria=cultura'; ?>">Cultura</a></li>
+                                        <?php
+                                        foreach ($cabecalho['assuntos'] as $assunto) {
+                                            $idCategoria = $assunto['categoria'];
+                                        ?>
+                                            <li><a href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>"><?php echo get_term($idCategoria)->name; ?></a></li>
+                                        <?php
+                                        }
+                                        ?>
                                     </ul>
                                 </nav>
                             </li>
-                            <?php /*                             
-                            <li class="menu-titulo"><strong>projetos</strong></li>
+                            <li class="menu-titulo"><strong>Projetos</strong></li>
                             <li>
                                 <nav>
                                     <ul class="menu-grid-links flex">
-                                        <li><a href="" target="_blank" rel="noopener noreferrer">Editorial</a></li>
+                                        <?php
+                                        foreach ($cabecalho['projetos'] as $projetoObj) {
+                                            $projeto = $projetoObj['url'];
+                                        ?>
+                                            <li><a href="<?php echo $projeto['url'] ?>" target="<?php echo $projeto['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($projeto['title']) ? $projeto['title'] : ''; ?></a></li>
+                                        <?php
+                                        }
+                                        ?>
                                     </ul>
                                 </nav>
-                            </li> 
-                            <li class="menu-titulo"><a href=""><strong>Quem somos</strong></a></li>
-                            <li class="menu-titulo"><a href=""><strong>Contato</strong></a></li>
-                            */ ?>
+                            </li>
+                            <?php
+                            if (!empty($cabecalho['links_menu'])) {
+                                foreach ($cabecalho['links_menu'] as $linkMenuObj) {
+                                    $linkMenu = $linkMenuObj['link'];
+                            ?>
+                                    <li class="menu-titulo hover-underline"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo $linkMenu['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $projeto['title'] : ''; ?></a></strong></li>
+                            <?php
+                                }
+                            }
+                            ?>
                         </ul>
                         <canvas class="gradiente-bandeira separador-menu"></canvas>
                         <div class="redes">
-                            <a href="mailto:" class="mail" target="_blank" rel="noopener noreferrer">
+                            <a href="mailto:<?php echo CONTATOS['email']; ?>" class="mail" target="_blank" rel="noopener noreferrer">
                                 <?php include 'img/svg/mail-icon.svg'; ?>
                             </a>
-
-                            <a href="#" class="instagram" target="_blank" rel="noopener noreferrer">
+                            <a href="https://instagram.com/<?php echo CONTATOS['instagram'] ?>" class="instagram" target="_blank" rel="noopener noreferrer">
                                 <?php include 'img/svg/instagram-icon.svg'; ?>
                             </a>
-
-                            <a href="#" class="whatsapp" target="_blank" rel="noopener noreferrer">
+                            <a href="https://wa.me/55<?php echo preg_replace('/[^0-9]/', '', CONTATOS['whatsapp']); ?>" class="whatsapp" target="_blank" rel="noopener noreferrer">
                                 <?php include 'img/svg/whatsapp-icon.svg'; ?>
                             </a>
                         </div>
