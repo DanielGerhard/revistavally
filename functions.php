@@ -9,38 +9,42 @@ function getImg($img = 'placeholder.jpg')
 
 function includeTagPadraoLink($idTermo, $classe = '')
 {
-
     $termo = get_term($idTermo);
+    if ($termo->slug != 'uncategorized') {
 ?>
-    <a href="<?php echo site_url() . '/?s&categoria=' . strtolower($idTermo); ?>" class="tag-padrao <?php echo $classe; ?>">
-        <h3><strong><?php echo $termo->name; ?></strong></h3>
-        <div class="bandeira-listrada">
-            <canvas></canvas>
-            <canvas></canvas>
-            <canvas></canvas>
-            <canvas></canvas>
-            <canvas></canvas>
-            <canvas></canvas>
-        </div>
-    </a>
-<?php
+        <a href="<?php echo site_url() . '/?s&categoria=' . strtolower($idTermo); ?>" class="tag-padrao <?php echo $classe; ?>">
+            <h3><strong><?php echo $termo->name; ?></strong></h3>
+            <div class="bandeira-listrada">
+                <canvas></canvas>
+                <canvas></canvas>
+                <canvas></canvas>
+                <canvas></canvas>
+                <canvas></canvas>
+                <canvas></canvas>
+            </div>
+        </a>
+    <?php
+    }
 }
 
-function includeTagPadrao($texto = '', $classe = '')
+function includeTagPadrao($idTermo, $classe = '')
 {
-?>
-    <div class="tag-padrao <?php echo $classe; ?>">
-        <h3><strong><?php echo $texto; ?></strong></h3>
-        <div class="bandeira-listrada">
-            <canvas></canvas>
-            <canvas></canvas>
-            <canvas></canvas>
-            <canvas></canvas>
-            <canvas></canvas>
-            <canvas></canvas>
+    $termo = get_term($idTermo);
+    if ($termo->slug != 'uncategorized') {
+    ?>
+        <div class="tag-padrao <?php echo $classe; ?>">
+            <h3><strong><?php echo $termo->name; ?></strong></h3>
+            <div class="bandeira-listrada">
+                <canvas></canvas>
+                <canvas></canvas>
+                <canvas></canvas>
+                <canvas></canvas>
+                <canvas></canvas>
+                <canvas></canvas>
+            </div>
         </div>
-    </div>
-<?php
+    <?php
+    }
 }
 
 function postAuthor($postId)
@@ -135,3 +139,48 @@ add_action('admin_menu', 'ocultar_aba_comentarios');
 define('FRONT_PAGE_ID', get_option('page_on_front'));
 
 define('CONTATOS', get_field('contatos', FRONT_PAGE_ID));
+
+function pre($var)
+{
+    ?>
+    <pre>
+        <?php print_r($var); ?>
+    </pre>
+<?php
+}
+
+// Função para registrar o Custom Post Type Projetos
+function registrar_post_type_projetos() {
+    $labels = array(
+        'name'               => 'Projetos',
+        'singular_name'      => 'Projeto',
+        'menu_name'          => 'Projetos',
+        'add_new'            => 'Adicionar Novo',
+        'add_new_item'       => 'Adicionar Novo Projeto',
+        'edit_item'          => 'Editar Projeto',
+        'new_item'           => 'Novo Projeto',
+        'view_item'          => 'Ver Projeto',
+        'search_items'       => 'Buscar Projetos',
+        'not_found'          => 'Nenhum Projeto encontrado',
+        'not_found_in_trash' => 'Nenhum Projeto encontrado na Lixeira',
+        'parent_item_colon'  => ''
+    );
+
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'has_archive'         => true,
+        'publicly_queryable'  => true,
+        'query_var'           => true,
+        'rewrite'             => array( 'slug' => 'projeto' ),
+        'capability_type'     => 'post',
+        'hierarchical'        => false,
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+        'taxonomies'          => array(),
+        'menu_position'       => 5,
+        'exclude_from_search' => false
+    );
+
+    register_post_type( 'projeto', $args );
+}
+add_action( 'init', 'registrar_post_type_projetos' );

@@ -1,8 +1,6 @@
 :root {
     // Fontes
     --fonte-primaria: 'Montserrat', sans-serif;
-    --fonte-secundaria: 'Arca Majora 3', sans-serif;
-    --fonte-destaque: 'Lobster Two', cursive;
 
     //Tamanhos
     --fonte-10px: 0.625rem;
@@ -64,7 +62,7 @@ body {
 
 ::selection {
     color: #fff;
-    background: #000000;
+    background: #000;
 }
 
 strong {
@@ -72,7 +70,6 @@ strong {
 }
 
 .titulo {
-    font-family: var(--fonte-secundaria);
     font-size: var(--fonte-normal);
     line-height: 1.4em;
     letter-spacing: 0.01em;
@@ -104,15 +101,14 @@ strong {
 }
 
 .subtitulo {
-    font-family: var(--fonte-secundaria);
     font-size: var(--fonte-grande);
 }
 
 p {
-    line-height: 1.35em;
+    line-height: 1.5em;
 }
 
-.paragrafo-padrao{
+.paragrafo-padrao {
     margin-bottom: 1em;
 }
 

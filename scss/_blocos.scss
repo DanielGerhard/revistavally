@@ -1,5 +1,9 @@
 .banner-home {
-    padding: 40px 0;
+    padding: 0 0 40px;
+
+    @include media-breakpoint-down(md) {
+        padding: 10px 0 40px;
+    }
 
     .bl-header-wrap {
         margin-bottom: 22px;
@@ -53,7 +57,11 @@
 }
 
 .banner-sobre {
-    padding-bottom: 128px;
+    padding-bottom: 112px;
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: 60px;
+    }
 
     &::before {
         position: absolute;
@@ -64,14 +72,19 @@
         left: 0;
     }
 
-    h1 {
-        font-size: var(--48px);
+    .titulo {
+        text-align: center;
         padding: 32px 0;
     }
 
     .picture-padrao {
         border-radius: 13px;
         box-shadow: 13px 15px 17px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+
+        img {
+            display: block;
+        }
     }
 }
 
@@ -143,6 +156,16 @@
 }
 
 .bl-swiper-materias {
+    .swiper-slide {
+        @include media-breakpoint-up(md) {
+            height: auto;
+        }
+
+        .cp-post {
+            height: 100%;
+        }
+    }
+
     .bl-header-wrap {
         text-align: center;
 
@@ -161,4 +184,26 @@
     }
 }
 
-.bl-full-texto {}
+.bl-full-texto {
+    padding: 96px 0 112px;
+
+    @include media-breakpoint-down(md) {
+        padding: 60px 0 80px;
+    }
+}
+
+.bl-img-esquerda {
+    padding: 80px 0 112px;
+
+    @include media-breakpoint-down(md) {
+        padding: 60px 0 80px;
+    }
+
+    .picture-padrao {
+        aspect-ratio: 6/4;
+    }
+
+    .paragrafo-padrao {
+        padding-right: 10%;
+    }
+}

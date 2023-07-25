@@ -89,7 +89,7 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                                 foreach ($cabecalho['links_menu'] as $linkMenuObj) {
                                     $linkMenu = $linkMenuObj['link'];
                             ?>
-                                    <li class="menu-titulo hover-underline"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo $linkMenu['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $projeto['title'] : ''; ?></a></strong></li>
+                                    <li class="menu-titulo hover-underline"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo $linkMenu['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $linkMenu['title'] : ''; ?></a></strong></li>
                             <?php
                                 }
                             }
@@ -125,9 +125,15 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
         </header>
         <div class="assuntos-header" e-assuntos-header>
             <ul>
-                <li><a href="<?php echo site_url(); ?>?s&categoria=debate" class="hover-underline">Debate</a></li>
-                <li><a href="<?php echo site_url(); ?>?s&categoria=shows" class="hover-underline">Shows</a></li>
-                <li><a href="<?php echo site_url(); ?>?s&categoria=cultura" class="hover-underline">Cultura</a></li>
+                <?php
+                if (!empty($cabecalho['assuntos'])) {
+                    foreach (array_column($cabecalho['assuntos'], 'categoria') as $idCategoria) {
+                ?>
+                        <li><a href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>" class="hover-underline"><?php echo get_term($idCategoria)->name; ?></a></li>
+                <?php
+                    } // foreach $cabecalho['assuintos'] as $idCategoria
+                } // if !empty $cabecalho['assuintos'] as $idCategoria
+                ?>
             </ul>
             <canvas class="linha gradiente-bandeira"></canvas>
         </div>

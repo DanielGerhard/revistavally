@@ -16,7 +16,7 @@
                             </a>
                         </div>
                         <div class="meta-post maior">
-                            <?php includeTagPadraoLink(get_the_terms($idPostBanner, 'category')[0]->name, 'd-sm-flex d-none'); ?>
+                            <?php includeTagPadraoLink(get_the_terms($idPostBanner, 'category')[0]->term_id, 'd-sm-flex d-none'); ?>
                             <p class="texto-cinza escrito-por">Por: <?php postAuthor($idMateria); ?></p>
                             <p class="texto-cinza data-publicacao"><?php echo get_the_date('d F, Y', $idMateria); ?></p>
                         </div>

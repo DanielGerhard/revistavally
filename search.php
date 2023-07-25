@@ -12,7 +12,7 @@ $pesquisa = $_GET['s'];
                     <?php
                     if ($idCategoria != null) {
                     ?>
-                        <h1 class="titulo extra-bold mb-4">Matérias da categoria: <strong><?php echo $idCategoria; ?></strong></h1>
+                        <h1 class="titulo extra-bold mb-4">Matérias da categoria: <strong><?php echo get_term($idCategoria)->name; ?></strong></h1>
                     <?php
                     } else {
                     ?>
@@ -20,7 +20,6 @@ $pesquisa = $_GET['s'];
                     <?php
                     }
                     ?>
-                    <canvas class="linha gradiente-bandeira"></canvas>
                 </div>
             </div>
             <?php

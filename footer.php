@@ -31,7 +31,7 @@
                         foreach ($rodape['projetos'] as $projetoObj) {
                             $projeto = $projetoObj['url'];
                         ?>
-                            <li><a href="<?php echo $projeto['url'] ?>" target="<?php echo $projeto['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($projeto['title']) ? $projeto['title'] : ''; ?></a></li>
+                            <li><a class="hover-underline" href="<?php echo $projeto['url'] ?>" target="<?php echo $projeto['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($projeto['title']) ? $projeto['title'] : ''; ?></a></li>
                         <?php
                         }
                         ?>
@@ -42,7 +42,7 @@
                         foreach ($rodape['assuntos'] as $assunto) {
                             $idCategoria = $assunto['categoria'];
                         ?>
-                            <li><a href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>"><?php echo get_term($idCategoria)->name; ?></a></li>
+                            <li><a class="hover-underline" href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>"><?php echo get_term($idCategoria)->name; ?></a></li>
                         <?php
                         }
                         ?>
@@ -54,7 +54,7 @@
                             foreach ($rodape['parceiros'] as $parceiroObj) {
                                 $parceiro = $parceiroObj['link'];
                         ?>
-                                <li><a href="<?php echo $parceiro['url']; ?>" target="<?php echo $parceiro['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($parceiro['title']) ? $projeto['title'] : ''; ?></a></li>
+                                <li><a class="hover-underline" href="<?php echo $parceiro['url']; ?>" target="<?php echo $parceiro['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($parceiro['title']) ? $projeto['title'] : ''; ?></a></li>
                         <?php
                             }
                         }
@@ -66,7 +66,7 @@
                             foreach ($rodape['links_menu'] as $linkMenuObj) {
                                 $linkMenu = $linkMenuObj['link'];
                         ?>
-                                <li class="menu-titulo hover-underline"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo $linkMenu['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $projeto['title'] : ''; ?></a></strong></li>
+                                <li class="menu-titulo hover-underline"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo $linkMenu['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $linkMenu['title'] : ''; ?></a></strong></li>
                         <?php
                             }
                         }
