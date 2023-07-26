@@ -1,5 +1,5 @@
 <!-- Banner -->
-<section class="banner-home">
+<section class="banner-home px-bl-l">
     <div class="container">
         <div class="bl-header-wrap">
             <div class="row align-items-center">

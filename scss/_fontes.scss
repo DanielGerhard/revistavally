@@ -138,3 +138,69 @@ p {
         text-decoration: underline;
     }
 }
+
+// Alinhamentos de texto
+.t-left {
+    text-align: left;
+ }
+ .t-center {
+    text-align: center;
+ }
+ .t-right {
+     text-align: right;
+ }
+ @include media-breakpoint-up(xxl) {
+     .t-xxl-left {
+        text-align: left !important;
+     }
+     .t-xxl-center {
+        text-align: center !important;
+     }
+     .t-xxl-right {
+         text-align: right !important;
+     }
+ }
+ @include media-breakpoint-up(xl) {
+     .t-xl-left {
+        text-align: left !important;
+     }
+     .t-xl-center {
+        text-align: center !important;
+     }
+     .t-xl-right {
+         text-align: right !important;
+     }
+ }
+ @include media-breakpoint-up(lg) {
+     .t-lg-left {
+        text-align: left !important;
+     }
+     .t-lg-center {
+        text-align: center !important;
+     }
+     .t-lg-right {
+         text-align: right !important;
+     }
+ }
+ @include media-breakpoint-up(md) {
+     .t-md-left {
+        text-align: left !important;
+     }
+     .t-md-center {
+        text-align: center !important;
+     }
+     .t-md-right {
+         text-align: right !important;
+     }
+ }
+ @include media-breakpoint-up(sm) {
+     .t-sm-left {
+        text-align: left !important;
+     }
+     .t-sm-center {
+        text-align: center !important;
+     }
+     .t-sm-right {
+         text-align: right !important;
+     }
+ }

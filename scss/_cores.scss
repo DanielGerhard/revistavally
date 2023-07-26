@@ -18,6 +18,8 @@
     --cor-instagram: #E1306C;
 }
 
+// cor backgrounds
+
 .gradiente-bandeira {
     background: #fff;
     background: linear-gradient(90deg, var(--vermelho) 0%, var(--laranja) 20%, var(--amarelo) 40%, var(--verde) 60%, rgba(4, 120, 194, 1) 80%, var(--roxo) 100%);
@@ -57,4 +59,47 @@
 
 .bg-roxo {
     background: var(--roxo);
+}
+
+
+// cor fonte
+
+.cor-fonte {
+    color: var(--cor-fonte);
+}
+
+.cor-branco {
+    color: #fff;
+}
+
+.cor-auxiliar {
+    color: var(--cor-auxiliar);
+}
+
+.cor-auxiliar-escura {
+    color: var(--cor-auxiliar-escura);
+}
+
+.cor-vermelho {
+    color: var(--vermelho);
+}
+
+.cor-laranja {
+    color: var(--laranja);
+}
+
+.cor-amarelo {
+    color: var(--amarelo);
+}
+
+.cor-verde {
+    color: var(--verde);
+}
+
+.cor-azul {
+    color: var(--azul);
+}
+
+.cor-roxo {
+    color: var(--roxo);
 }

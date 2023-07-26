@@ -1,0 +1,43 @@
+.single-projeto {
+    .banner-projeto {
+        small {
+            display: block;
+            font-weight: 100;
+        }
+
+        p {
+            font-size: var(--fonte-18px);
+            line-height: 1.4em;
+            font-weight: 300;
+        }
+    }
+
+    .bl-img-esquerda {
+        position: relative;
+
+        .picture-padrao {
+            width: 50vw;
+        }
+
+        &.full-height {
+            padding: 60px 0;
+            min-height: 640px;
+
+            .picture-padrao {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    .bl-full-texto {
+        padding: 80px 0 80px;
+    }
+
+    .bloco-galeria {
+        padding: 40px 0 80px;
+    }
+}

@@ -579,3 +579,30 @@ a {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#ffffff", GradientType=1);
     }
 }
+
+.hover-underline-before {
+    display: flex;
+    align-items: end;
+    transition: font-weight 0.4s;
+
+    &::before {
+        content: "";
+        display: block;
+        position: relative;
+        bottom: 0;
+        height: 1px;
+        width: 0px;
+        background-color: var(--cor-fonte);
+        transition: width 0.4s;
+        transform: translateY(-100%);
+    }
+
+    &:hover {
+        font-weight: 600;
+
+        &::before {
+            width: 1em;
+            margin-right: 1px;
+        }
+    }
+}

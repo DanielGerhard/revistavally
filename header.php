@@ -22,7 +22,10 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.css" integrity="sha512-Aeqz1zfbRIQHDPsvEobXzaeXDyh8CUqRdvy6QBCQEbxIc/vazrTdpjEufMbxSW61+7a5vIDDuGh8z5IekVG0YA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 
     <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css'; ?>"> -->
@@ -129,7 +132,7 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                 if (!empty($cabecalho['assuntos'])) {
                     foreach (array_column($cabecalho['assuntos'], 'categoria') as $idCategoria) {
                 ?>
-                        <li><a href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>" class="hover-underline"><?php echo get_term($idCategoria)->name; ?></a></li>
+                        <li><a href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>" class="hover-underline-before"><?php echo get_term($idCategoria)->name; ?></a></li>
                 <?php
                     } // foreach $cabecalho['assuintos'] as $idCategoria
                 } // if !empty $cabecalho['assuintos'] as $idCategoria

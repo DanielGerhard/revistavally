@@ -1,7 +1,7 @@
 :root {
-    --altura-header: 90px;
+    --altura-header: 120px;
     --largura-menu: 320px;
-    --altura-assuntos-header: 40px;
+    --altura-assuntos-header: 24px;
     --altura-header-fixo: 80px;
     
     @include media-breakpoint-down(lg) {
@@ -166,7 +166,7 @@
         }
 
         .logo {
-            width: 112px;
+            width: 130px;
             transition: width 0.3s;
 
             @include media-breakpoint-down(lg) {
@@ -195,7 +195,6 @@
     left: 0;
     background-color: #fff;
     margin-top: var(--altura-header);
-    padding: 20px 0;
     z-index: 5555;
     height: var(--altura-assuntos-header);
     transition: height 0.3s, margin-top 0.3s, padding 0.3s;
@@ -210,9 +209,9 @@
         justify-content: center;
         align-items: center;
         background-color: #fff;
-        padding: 0 20px;
+        padding: 0 24px;
         z-index: 2;
-        gap: 10px;
+        gap: 16px;
 
 
         li {

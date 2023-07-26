@@ -207,3 +207,38 @@
         padding-right: 10%;
     }
 }
+
+.bl-full-img {
+    picture {
+        height: 500px;
+    }
+}
+
+.bloco-galeria {
+    --altura-item-menor: 300px;
+
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        &__item {
+            height: 100%;
+            width: 100%;
+
+            &-maior {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            &-menor {
+                aspect-ratio: 9/6;
+            }
+
+            picture {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

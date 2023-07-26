@@ -55,7 +55,7 @@ $blocoTextoImg = get_field('bloco_texto_imagem', $post->ID);
                     <?php
                     if (!empty($blocoTextoImg['titulo'])) {
                     ?>
-                        <h2 class="titulo maior mb-4"><strong><?php echo $blocoFullTexto['titulo']; ?></strong></h2>
+                        <h2 class="titulo maior mb-4"><strong><?php echo $blocoTextoImg['titulo']; ?></strong></h2>
                     <?php
                     } // if !empty $blocoTextoImg['titulo']
                     ?>
@@ -66,7 +66,7 @@ $blocoTextoImg = get_field('bloco_texto_imagem', $post->ID);
                     <?php
                     if (!empty($blocoTextoImg['texto'])) {
                     ?>
-                        <p class="paragrafo-padrao"><?php echo $blocoFullTexto['texto']; ?></p>
+                        <p class="paragrafo-padrao"><?php echo $blocoTextoImg['texto']; ?></p>
                     <?php
                     } // if !empty $blocoTextoImg['texto']
                     ?>

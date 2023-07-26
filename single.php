@@ -1,4 +1,5 @@
 <?php
+the_post();
 get_header();
 $imagemDestaque = get_field('imagem_destaque', $post->ID);
 ?>
