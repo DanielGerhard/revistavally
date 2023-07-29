@@ -1,12 +1,12 @@
 .post-style {
     .bandeira-listrada {
-        height: 4px;
+        height: 6px;
         position: relative;
         width: 100%;
         left: 0;
 
         canvas {
-            height: 4px;
+            height: 6px;
             transform: initial;
         }
     }
@@ -93,8 +93,9 @@
     }
 
     p {
-        line-height: 1.5em;
+        line-height: 1.4em;
         margin-bottom: 1.5em;
+        letter-spacing: 0.015em;
     }
 
     img {
@@ -129,6 +130,7 @@
         margin-left: 20px;
         margin-bottom: 2em;
         list-style-position: inside;
+        line-height: 1.4em;
 
         li {
             margin-bottom: 1.75em;

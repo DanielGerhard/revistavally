@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="conteudo">
-                        <a href="<?php echo get_the_permalink($idMateria); ?>" class="titulo"><strong><?php echo get_the_title($idMateria) ?></strong></a>
+                        <a href="<?php echo get_the_permalink($idMateria); ?>" class="titulo maior"><strong><?php echo get_the_title($idMateria) ?></strong></a>
                         <div class="col-lg-6 display-mobile">
                             <a href="">
                                 <picture class="picture-padrao">

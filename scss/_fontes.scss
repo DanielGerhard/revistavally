@@ -35,19 +35,19 @@
 
     --fonte-extra-pequena: var(--fonte-12px);
     --fonte-pequena: var(--fonte-14px);
-    --fonte-normal: var(--fonte-22px);
+    --fonte-normal: var(--fonte-24px);
     --fonte-media: var(--fonte-28px);
-    --fonte-media-grande: var(--fonte-32px);
-    --fonte-grande: var(--fonte-34px);
+    --fonte-media-grande: var(--fonte-34px);
+    --fonte-grande: var(--fonte-38px);
     --fonte-extra-grande: var(--fonte-48px);
 
     @include media-breakpoint-down(lg) {
-        --fonte-media-grande: var(--fonte-22px);
+        --fonte-media-grande: var(--fonte-32px);
     }
 
     @include media-breakpoint-down(lg) {
-        --fonte-media-grande: var(--fonte-22px);
-        --fonte-extra-grande: var(--fonte-32px);
+        --fonte-media-grande: var(--fonte-28px);
+        --fonte-extra-grande: var(--fonte-34px);
     }
 }
 

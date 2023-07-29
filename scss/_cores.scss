@@ -1,21 +1,39 @@
+// Paleta
+$cor-fonte: '000000';
+$cor-auxiliar: 'efefef';
+$cor-auxiliar-escura: 'dfdfdf';
+
+// Cores da Bandeira
+$vermelho: 'DF694D';
+$laranja: 'DE7C4C';
+$amarelo: 'DCB14B';
+$verde: '32BEA1';
+$azul: '2A96BD';
+$roxo: '8F4FD9';
+
+//Redes
+$cor-whatsapp: '25D366';
+$cor-mail: '6FC5EB';
+$cor-instagram: 'E1306C';
+
 :root {
     // Paleta
-    --cor-fonte: #000;
-    --cor-auxiliar: #F6F6F6;
-    --cor-auxiliar-escura: #dfdfdf;
+    --cor-fonte: #{'#'+$cor-fonte};
+    --cor-auxiliar: #{'#'+$cor-auxiliar};
+    --cor-auxiliar-escura: #{'#'+$cor-auxiliar-escura};
 
     // Cores da Bandeira
-    --vermelho: #DF694D;
-    --laranja: #DE7C4C;
-    --amarelo: #DCB14B;
-    --verde: #32BEA1;
-    --azul: #2A96BD;
-    --roxo: #8F4FD9;
+    --vermelho: #{'#'+$vermelho};
+    --laranja: #{'#'+$laranja};
+    --amarelo: #{'#'+$amarelo};
+    --verde: #{'#'+$verde};
+    --azul: #{'#'+$azul};
+    --roxo: #{'#'+$roxo};
 
     //Redes
-    --cor-whatsapp: #25D366;
-    --cor-mail: #6FC5EB;
-    --cor-instagram: #E1306C;
+    --cor-whatsapp: #{'#'+$cor-whatsapp};
+    --cor-mail: #{'#'+$cor-mail};
+    --cor-instagram: #{'#'+$cor-instagram};
 }
 
 // cor backgrounds

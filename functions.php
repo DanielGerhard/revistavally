@@ -112,7 +112,6 @@ function postsPadraoPaginados()
     exit;
 }
 
-
 // Hooks
 function remover_taxonomia_tags()
 {
@@ -178,7 +177,8 @@ function registrar_post_type_projetos() {
         'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
         'taxonomies'          => array(),
         'menu_position'       => 5,
-        'exclude_from_search' => false
+        'exclude_from_search' => false,
+        'menu_icon'           => 'dashicons-art'
     );
 
     register_post_type( 'projeto', $args );

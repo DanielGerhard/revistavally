@@ -92,7 +92,7 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                                 foreach ($cabecalho['links_menu'] as $linkMenuObj) {
                                     $linkMenu = $linkMenuObj['link'];
                             ?>
-                                    <li class="menu-titulo hover-underline"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo $linkMenu['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $linkMenu['title'] : ''; ?></a></strong></li>
+                                    <li class="menu-titulo hover-underline-before"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo $linkMenu['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $linkMenu['title'] : ''; ?></a></strong></li>
                             <?php
                                 }
                             }
