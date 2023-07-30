@@ -32,7 +32,7 @@ switch ($materiasRecomendadas['tipo_exibicao']) {
 <section class="bl-swiper-materias">
     <div class="bl-header-wrap">
         <h2 class="titulo menor"><strong>Veja mais materias</strong></h2>
-        <canvas class="linha gradiente-bandeira"></canvas>
+        <div class="linha gradiente-bandeira"></div>
     </div>
     <div class="container">
         <div class="inner-container">

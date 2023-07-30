@@ -57,9 +57,9 @@ $conteudoFlexivel = get_field('conteudo_flexivel', $post->ID);
             } // switch ($bloco['acf_fc_layout'])
         } // foreach ($conteudoFlexivel as $bloco) {
     } // if (!empty($conteudoFlexivel))
-
     include '_swiper-mais-materias.php';
     ?>
 </main>
-
-<?php get_footer(); ?>
+<?php
+get_footer();
+?>

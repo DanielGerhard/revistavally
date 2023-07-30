@@ -79,10 +79,6 @@
                 }
             }
 
-            button[e-clear-searchbar] {
-                display: block;
-            }
-
             input {
                 width: 256px;
                 padding: 10px;
@@ -256,6 +252,7 @@
 
         @include media-breakpoint-down(lg) {
             width: 100%;
+            border-radius: 6px;
         }
     }
 

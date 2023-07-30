@@ -1,12 +1,25 @@
 .single-projeto {
     .banner-projeto {
+
+        &__conteudo {
+            margin-bottom: 50px;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 70px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 85px;
+            }
+        }
+
         .imagem-destaque {
             height: initial;
         }
 
         .picture-padrao {
-            height: calc(100vh - var(--altura-header) - var(--altura-assuntos-header));
-            height: calc(100svh - var(--altura-header) - var(--altura-assuntos-header));
+            height: calc(100vh - var(--altura-header) - var(--altura-assuntos-header) - 6px);
+            height: calc(100svh - var(--altura-header) - var(--altura-assuntos-header) - 6px);
             min-height: 420px;
         }
 
@@ -23,14 +36,15 @@
 
         .banner-cta {
             position: absolute;
-            width: fit-content;
             bottom: 0;
             right: 0px;
-            color: var(--cor-fonte);
-            background-color: #fff;
             border-radius: 30px 0 0 0;
+            padding: 16px 80px 16px 20px;
+            width: fit-content;
+            background-color: #fff;
+            font-size: var(--fonte-18px);
+            color: var(--cor-fonte);
             text-decoration: initial;
-            padding: 13px 80px 13px 20px;
             transition: padding 0.3s;
 
             &:hover {
@@ -46,12 +60,24 @@
     .bl-img-esquerda {
         position: relative;
 
+        @include media-breakpoint-down(md) {
+            padding: 60px 0;
+        }
+
         .picture-padrao {
             width: 50vw;
+
+            @include media-breakpoint-down(lg) {
+                width: calc(100% + (100vw - 100%)/2);
+            }
         }
 
         &.full-height {
             padding: 60px 0;
+
+            @include media-breakpoint-down(lg) {
+                padding-top: 0;
+            }
 
             .picture-padrao {
                 position: absolute;
@@ -64,9 +90,11 @@
                 max-height: 650px;
 
                 @include media-breakpoint-down(lg) {
+                    margin-bottom: 30px;
                     position: relative;
                     top: initial;
                     transform: initial;
+                    width: 100%;
                 }
             }
         }
@@ -74,9 +102,13 @@
 
     .bl-full-texto {
         padding: 80px 0 80px;
+
+        @include media-breakpoint-down(md) {
+            padding: 60px 0 40px;
+        }
     }
 
     .bloco-galeria {
-        padding: 40px 0 80px;
+        padding: 40px 0;
     }
 }

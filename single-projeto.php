@@ -27,22 +27,23 @@ $conteudoFlexivel = get_field('conteudo_flexivel', $post->ID);
                 <div class="titulo-post cor-branco">
                     <div class="container">
                         <a href="<?php echo $botaoContato['url']; ?>" target="<?php echo $botaoContato['target'] ? "_blank" : ''; ?>" class=" banner-cta"><strong><?php echo $botaoContato['title']; ?></strong></a>
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <h1 class="titulo extra-grande mt-0 mb-0"><strong><?php the_title(); ?></strong></h1>
-                                <?php
-                                if (!empty($informacoesAdicionais)) {
-                                ?>
-                                    <small class="mt-3"><?php echo $informacoesAdicionais; ?></small>
-                                <?php
-                                } // if !empty $informacoesAdicionais 
-
-                                if (!empty($resumo)) {
-                                ?>
-                                    <p class="mt-3 mb-5"><?php echo $resumo; ?></p>
-                                <?php
-                                } // if !empty $resumo 
-                                ?>
+                        <div class="banner-projeto__conteudo">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <h1 class="titulo extra-grande mt-0 mb-0"><strong><?php the_title(); ?></strong></h1>
+                                    <?php
+                                    if (!empty($informacoesAdicionais)) {
+                                    ?>
+                                        <small class="mt-3"><?php echo $informacoesAdicionais; ?></small>
+                                    <?php
+                                    } // if !empty $informacoesAdicionais
+                                    if (!empty($resumo)) {
+                                    ?>
+                                        <p class="mb-0 mt-3"><?php echo $resumo; ?></p>
+                                    <?php
+                                    } // if !empty $resumo
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -56,9 +57,6 @@ $conteudoFlexivel = get_field('conteudo_flexivel', $post->ID);
     <?php // Conteudo Flexível,
     if (!empty($conteudoFlexivel)) {
         foreach ($conteudoFlexivel as $bloco) {
-            /*             echo '<pre>';
-            pre($bloco);
-            echo '</pre>'; */
             switch ($bloco['acf_fc_layout']) {
 
                     // Bloco Imagem Direita

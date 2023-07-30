@@ -1,9 +1,9 @@
 :root {
     --altura-header: 120px;
     --largura-menu: 320px;
-    --altura-assuntos-header: 24px;
+    --altura-assuntos-header: 35px;
     --altura-header-fixo: 80px;
-    
+
     @include media-breakpoint-down(lg) {
         --altura-header: 90px;
         --altura-assuntos-header: 0px;
@@ -188,7 +188,7 @@
 .assuntos-header {
     position: fixed;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     right: 0;
@@ -197,8 +197,8 @@
     margin-top: var(--altura-header);
     z-index: 5555;
     height: var(--altura-assuntos-header);
-    transition: height 0.3s, margin-top 0.3s, padding 0.3s;
     overflow: hidden;
+    transition: height 0.3s, margin-top 0.3s, padding 0.3s;
 
     @include media-breakpoint-down(md) {
         display: none;

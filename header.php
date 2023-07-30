@@ -26,8 +26,6 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.css" integrity="sha512-Aeqz1zfbRIQHDPsvEobXzaeXDyh8CUqRdvy6QBCQEbxIc/vazrTdpjEufMbxSW61+7a5vIDDuGh8z5IekVG0YA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
     <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css'; ?>"> -->
     <style>
         <?php include get_template_directory() . '/style.css'; ?>
@@ -77,11 +75,15 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                                 <nav>
                                     <ul class="menu-grid-links flex">
                                         <?php
-                                        foreach ($cabecalho['projetos'] as $projetoObj) {
-                                            $projeto = $projetoObj['url'];
+                                        if (!empty($cabecalho['projetos'])) {
+                                            foreach ($cabecalho['projetos'] as $projetoObj) {
+                                                $projeto = $projetoObj['url'];
+                                                if (!empty($projeto) && !empty($projeto['title'])) {
                                         ?>
-                                            <li><a href="<?php echo $projeto['url'] ?>" target="<?php echo $projeto['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($projeto['title']) ? $projeto['title'] : ''; ?></a></li>
+                                                    <li><a href="<?php echo $projeto['url'] ?>" target="<?php echo !empty($projeto['target']) == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($projeto['title']) ? $projeto['title'] : ''; ?></a></li>
                                         <?php
+                                                }
+                                            }
                                         }
                                         ?>
                                     </ul>
@@ -91,14 +93,19 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                             if (!empty($cabecalho['links_menu'])) {
                                 foreach ($cabecalho['links_menu'] as $linkMenuObj) {
                                     $linkMenu = $linkMenuObj['link'];
+                                    if (!empty($linkMenu) && !empty($linkMenu['title'])) {
                             ?>
-                                    <li class="menu-titulo hover-underline-before"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo $linkMenu['target'] == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $linkMenu['title'] : ''; ?></a></strong></li>
+                                        <li class="menu-titulo hover-underline-before"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo !empty($linkMenu['target']) == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $linkMenu['title'] : ''; ?></a></strong></li>
                             <?php
+                                    }
                                 }
                             }
                             ?>
                         </ul>
                         <canvas class="gradiente-bandeira separador-menu"></canvas>
+                        <ul class="mt-4">
+                            <li class="menu-titulo"><strong>Contate-nos:</strong></li>
+                        </ul>
                         <div class="redes">
                             <a href="mailto:<?php echo CONTATOS['email']; ?>" class="mail" target="_blank" rel="noopener noreferrer">
                                 <?php include 'img/svg/mail-icon.svg'; ?>
@@ -126,7 +133,7 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                 </div>
             </div>
         </header>
-        <div class="assuntos-header" e-assuntos-header>
+        <div class="assuntos-header before-absoluto" e-assuntos-header>
             <ul>
                 <?php
                 if (!empty($cabecalho['assuntos'])) {

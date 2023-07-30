@@ -11,7 +11,7 @@
 
                 if (!empty($texto)) {
                 ?>
-                    <p class="paragrafo-padrao"><?php echo $texto; ?></p>
+                    <p class="paragrafo-padrao mb-0"><?php echo $texto; ?></p>
                 <?php
                 } // if !empty $texto
                 ?>

@@ -43,7 +43,8 @@
                     </a>
                 </div>
             <?php
-            } ?>
+            } //foreach ($materias as $materia)
+            ?>
         </div>
     </div>
 </section>

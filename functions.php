@@ -149,7 +149,8 @@ function pre($var)
 }
 
 // Função para registrar o Custom Post Type Projetos
-function registrar_post_type_projetos() {
+function registrar_post_type_projetos()
+{
     $labels = array(
         'name'               => 'Projetos',
         'singular_name'      => 'Projeto',
@@ -171,16 +172,16 @@ function registrar_post_type_projetos() {
         'has_archive'         => true,
         'publicly_queryable'  => true,
         'query_var'           => true,
-        'rewrite'             => array( 'slug' => 'projeto' ),
+        'rewrite'             => array('slug' => 'projeto'),
         'capability_type'     => 'post',
         'hierarchical'        => false,
-        'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
         'taxonomies'          => array(),
         'menu_position'       => 5,
         'exclude_from_search' => false,
         'menu_icon'           => 'dashicons-art'
     );
 
-    register_post_type( 'projeto', $args );
+    register_post_type('projeto', $args);
 }
-add_action( 'init', 'registrar_post_type_projetos' );
+add_action('init', 'registrar_post_type_projetos');

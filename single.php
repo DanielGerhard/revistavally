@@ -50,4 +50,6 @@ $imagemDestaque = get_field('imagem_destaque', $post->ID);
     </section>
 </main>
 
-<?php get_footer(); ?>
+<?php
+include '_swiper-mais-materias.php';
+get_footer(); ?>

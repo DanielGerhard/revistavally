@@ -71,6 +71,7 @@
                             }
                         }
                         ?>
+                        <li class="menu-titulo mt-md-0 mt-5"><strong>Contate-nos:</strong></li>
                         <div class="redes">
                             <a href="mailto:<?php echo CONTATOS['email']; ?>" class="mail" target="_blank" rel="noopener noreferrer">
                                 <?php include 'img/svg/mail-icon.svg'; ?>

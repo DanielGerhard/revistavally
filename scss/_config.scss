@@ -1,5 +1,5 @@
 main {
-    padding-top: calc(var(--altura-header) + var(--altura-assuntos-header) + var(--main-offset-top, 20px));
+    padding-top: calc(var(--altura-header) + var(--altura-assuntos-header));
 }
 
 section {
@@ -92,6 +92,7 @@ section {
     position: relative;
 
     img {
+        display: block;
         height: 100%;
         width: 100%;
         object-fit: cover;
