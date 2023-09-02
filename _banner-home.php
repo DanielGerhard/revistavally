@@ -50,8 +50,7 @@
                                     <h2 class="titulo menor"><strong><?php echo $banner['anuncio']['link']['title']; ?></strong></h2>
                                 <?php
                                 }
-                                ?>
-                                <?php
+                                
                                 if (!empty($banner['anuncio']['subtitulo_personalizado'])) {
                                 ?>
                                     <p class="maior"><?php echo $banner['anuncio']['subtitulo_personalizado']; ?></p>

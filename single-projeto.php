@@ -26,7 +26,13 @@ $conteudoFlexivel = get_field('conteudo_flexivel', $post->ID);
                 </picture>
                 <div class="titulo-post cor-branco">
                     <div class="container">
-                        <a href="<?php echo $botaoContato['url']; ?>" target="<?php echo $botaoContato['target'] ? "_blank" : ''; ?>" class=" banner-cta"><strong><?php echo $botaoContato['title']; ?></strong></a>
+                        <?php
+                        if (!empty($botaoContato)) {
+                        ?>
+                            <a href="<?php echo $botaoContato['url']; ?>" target="<?php echo $botaoContato['target'] ? "_blank" : ''; ?>" class=" banner-cta"><strong><?php echo $botaoContato['title']; ?></strong></a>
+                        <?php
+                        } // if !empty $botaoContato
+                        ?>
                         <div class="banner-projeto__conteudo">
                             <div class="row">
                                 <div class="col-lg-5">

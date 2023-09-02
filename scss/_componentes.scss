@@ -587,7 +587,7 @@ a {
         display: block;
         position: relative;
         bottom: 0;
-        height: 1px;
+        height: 0.01em;
         width: 0px;
         background-color: var(--cor-fonte);
         transition: width 0.4s;
@@ -598,8 +598,14 @@ a {
         font-weight: 600;
 
         &::before {
-            width: 1em;
+            width: 1em !important;
             margin-right: 1px;
+        }
+    }
+
+    &.semi-aberto {
+        &:before{
+            width: 0.3em;
         }
     }
 }

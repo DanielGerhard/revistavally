@@ -1,5 +1,7 @@
 <?php
 $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
+// $cabecalho = get_field('cabecalho', 'informacoes_gerais');
+// pre($cabecalho)
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +53,7 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                             <?php
                             if (!is_front_page()) {
                             ?>
-                                <li class="menu-titulo"><strong><a href="<?php echo site_url(); ?>">Início</a></strong></li>
+                                <li class="hover-underline-before semi-aberto"><strong><a href="<?php echo site_url(); ?>">Início</a></strong></li>
                             <?php
                             }
                             ?>
@@ -60,12 +62,14 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                                 <nav>
                                     <ul class="menu-grid-links grid">
                                         <?php
-                                        foreach ($cabecalho['assuntos'] as $assunto) {
-                                            $idCategoria = $assunto['categoria'];
+                                        if (!empty($cabecalho['assuntos'])) {
+                                            foreach ($cabecalho['assuntos'] as $assunto) {
+                                                $idCategoria = $assunto['categoria'];
                                         ?>
-                                            <li><a href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>"><?php echo get_term($idCategoria)->name; ?></a></li>
+                                                <li class="hover-underline"><a href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>"><?php echo get_term($idCategoria)->name; ?></a></li>
                                         <?php
-                                        }
+                                            } // foreach ($cabecalho['assuntos'] as $assunto)
+                                        } // if (!empty($cabecalho['assuntos'])
                                         ?>
                                     </ul>
                                 </nav>
@@ -80,7 +84,26 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                                                 $projeto = $projetoObj['url'];
                                                 if (!empty($projeto) && !empty($projeto['title'])) {
                                         ?>
-                                                    <li><a href="<?php echo $projeto['url'] ?>" target="<?php echo !empty($projeto['target']) == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($projeto['title']) ? $projeto['title'] : ''; ?></a></li>
+                                                    <li class="hover-underline"><a href="<?php echo $projeto['url'] ?>" target="<?php echo !empty($projeto['target']) == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($projeto['title']) ? $projeto['title'] : ''; ?></a></li>
+                                        <?php
+                                                }
+                                            }
+                                        }
+                                        ?>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="menu-titulo"><strong>Parceiros</strong></li>
+                            <li>
+                                <nav>
+                                    <ul class="menu-grid-links flex">
+                                        <?php
+                                        if (!empty($cabecalho['parceiros'])) {
+                                            foreach ($cabecalho['parceiros'] as $parceiroObj) {
+                                                $parceiro = $parceiroObj['link'];
+                                                if (!empty($parceiro) && !empty($parceiro['title'])) {
+                                        ?>
+                                                    <li class="hover-underline"><a href="<?php echo $parceiro['url'] ?>" target="<?php echo !empty($parceiro['target']) == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($parceiro['title']) ? $parceiro['title'] : ''; ?></a></li>
                                         <?php
                                                 }
                                             }
@@ -95,11 +118,11 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
                                     $linkMenu = $linkMenuObj['link'];
                                     if (!empty($linkMenu) && !empty($linkMenu['title'])) {
                             ?>
-                                        <li class="menu-titulo hover-underline-before"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo !empty($linkMenu['target']) == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $linkMenu['title'] : ''; ?></a></strong></li>
+                                        <li class="hover-underline-before semi-aberto"><strong><a href="<?php echo $linkMenu['url']; ?>" target="<?php echo !empty($linkMenu['target']) == 'blank' ? '_blank' : ''; ?>"><?php echo !empty($linkMenu['title']) ? $linkMenu['title'] : ''; ?></a></strong></li>
                             <?php
                                     }
-                                }
-                            }
+                                } //  foreach ($cabecalho['links_menu'] as $linkMenuObj)
+                            } // if (!empty($cabecalho['links_menu']))
                             ?>
                         </ul>
                         <canvas class="gradiente-bandeira separador-menu"></canvas>
@@ -136,8 +159,8 @@ $cabecalho = get_field('cabecalho', FRONT_PAGE_ID);
         <div class="assuntos-header before-absoluto" e-assuntos-header>
             <ul>
                 <?php
-                if (!empty($cabecalho['assuntos'])) {
-                    foreach (array_column($cabecalho['assuntos'], 'categoria') as $idCategoria) {
+                if (!empty($cabecalho['assuntos_destaque'])) {
+                    foreach (array_column($cabecalho['assuntos_destaque'], 'categoria') as $idCategoria) {
                 ?>
                         <li><a href="<?php echo site_url() . '?s&categoria=' . $idCategoria; ?>" class="hover-underline-before"><?php echo get_term($idCategoria)->name; ?></a></li>
                 <?php

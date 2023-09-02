@@ -185,3 +185,11 @@ function registrar_post_type_projetos()
     register_post_type('projeto', $args);
 }
 add_action('init', 'registrar_post_type_projetos');
+
+acf_add_options_page(array(
+    'page_title' => 'Informações Gerais',
+    'menu_slug' => 'informacoes_gerais',
+    'capability' => 'edit_posts',
+    'redirect' => false,
+    'icon_url' => 'dashicons-admin-generic'
+));
